@@ -4,7 +4,7 @@ module.exports = {
     './resources/**/*.js',
     './resources/**/*.vue',
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // or 'media' or 'class' | future: add toogle button to set dark into body - class strategy
   theme: {
     extend: {},
   },
