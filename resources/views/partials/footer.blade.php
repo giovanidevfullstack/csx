@@ -1,0 +1,3 @@
+<footer>
+    @livewireScripts
+</footer>
