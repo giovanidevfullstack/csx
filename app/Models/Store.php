@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\User;
 
 class Store extends Model
 {
@@ -21,4 +22,9 @@ class Store extends Model
         'legal_name',
         'is_active'
     ];
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }

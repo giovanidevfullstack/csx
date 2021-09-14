@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Vehicle;
 
 class VehicleImages extends Model
 {
@@ -17,4 +18,9 @@ class VehicleImages extends Model
     protected $fillable = [
         'path'
     ];
+
+    public function vehicle()
+    {
+        return $this->belongsTo(Vehicle::class);
+    }
 }

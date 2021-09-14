@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class UserConfig extends Model
 {
@@ -17,4 +18,9 @@ class UserConfig extends Model
     protected $fillable = [
         'setup'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

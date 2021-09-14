@@ -8,6 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\{
+    Store,
+    UserDocument,
+    UserConfig,
+    Address,
+    Vehicle
+};
 
 class User extends Authenticatable
 {
@@ -42,4 +49,30 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }    
+
+    public function user_document()
+    {
+        return $this->hasOne(UserDocument::class);
+    }
+
+    public function user_config()
+    {
+        return $this->hasOne(UserConfig::class);
+    }
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class);
+    }
+    
 }

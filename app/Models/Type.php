@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Vehicle;
 
-class VehicleType extends Model
+class Type extends Model
 {
     use HasFactory;
 
@@ -17,4 +18,9 @@ class VehicleType extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function vehicles()
+    {
+        return $this->belongsToMany(Vehicle::class);
+    }
 }
