@@ -24,6 +24,7 @@ class CreateAddressesTable extends Migration
             $table->string('street_number', 10)->nullable();
             $table->string('note', 100)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
