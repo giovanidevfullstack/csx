@@ -30,9 +30,9 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'phone' => $this->faker->phoneNumber(),
-            'age' => rand(1,3),
-            'gender' => array_rand(['m', 'f']),
-            'is_admin' => rand(0,1),
+            'age' => $this->faker->numberBetween(18, 70),
+            'gender' => ['m', 'f'][array_rand(['m', 'f'], 1)],
+            'is_admin' => 0,
             'is_seller' => rand(0,1),
             'is_employee' => rand(0,1),
             'remember_token' => Str::random(10)
