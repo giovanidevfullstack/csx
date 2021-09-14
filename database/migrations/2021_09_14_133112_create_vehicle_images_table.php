@@ -15,7 +15,7 @@ class CreateVehicleImagesTable extends Migration
     {
         Schema::create('vehicle_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_id');
+            $table->foreignId('vehicle_id')->constrained();
             $table->string('path')->nullable();
             $table->timestamps();
         });

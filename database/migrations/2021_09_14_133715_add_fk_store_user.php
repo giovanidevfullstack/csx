@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserConfigsTable extends Migration
+class AddFkStoreUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateUserConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_configs', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->json('setup')->nullable();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('store_id')
+                ->after('id')
+                ->nullable()
+                ->constrained();
         });
     }
 
@@ -28,6 +28,8 @@ class CreateUserConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_configs');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('store_id');
+        });
     }
 }
