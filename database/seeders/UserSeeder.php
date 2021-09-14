@@ -8,7 +8,8 @@ use App\Models\{
     Vehicle,
     VehicleDocument,
     Type,
-    Store
+    Store,
+    Address
 };
 
 class UserSeeder extends Seeder
@@ -32,9 +33,17 @@ class UserSeeder extends Seeder
                 ]);
             });
 
-            $store = Store::factory()->count(1)->create();
+            $store = Store::factory()->count(1)->create()->each(function($store) {
+                Address::factory()->create([
+                    'store_id' => $store->id
+                ]);
+            });
             $user->store()->associate($store->pluck('id')[0]);
             $user->save();
+
+            Address::factory()->create([
+                'user_id' => $user->id
+            ]);
         });
     }
 }

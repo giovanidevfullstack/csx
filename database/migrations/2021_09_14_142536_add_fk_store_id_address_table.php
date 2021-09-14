@@ -14,7 +14,10 @@ class AddFkStoreIdAddressTable extends Migration
     public function up()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->foreignId('store_id')->after('id')->constrained();
+            $table->foreignId('store_id')
+                ->after('id')
+                ->nullable()
+                ->constrained();
         });
     }
 

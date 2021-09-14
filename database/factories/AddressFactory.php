@@ -23,7 +23,7 @@ class AddressFactory extends Factory
     {
         return [
             'country' => $this->faker->country,
-            'uf' => $this->faker->state,
+            'uf' => $this->faker->stateAbbr,
             'city' => $this->faker->city,
             'address' => $this->faker->address,
             'postcode' => $this->faker->postcode,

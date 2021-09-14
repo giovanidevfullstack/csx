@@ -14,7 +14,10 @@ class AddFkUserIdAddressTable extends Migration
     public function up()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->foreignId('user_id')->after('id')->constrained();
+            $table->foreignId('user_id')
+                ->after('id')
+                ->nullable()
+                ->constrained();
         });
     }
 
