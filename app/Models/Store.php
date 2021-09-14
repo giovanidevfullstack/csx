@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\User;
+use App\Models\{
+    User,
+    Address
+};
 
 class Store extends Model
 {
@@ -26,5 +29,10 @@ class Store extends Model
     public function user()
     {
         return $this->hasMany(User::class);
+    }
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
     }
 }
