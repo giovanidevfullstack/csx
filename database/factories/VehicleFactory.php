@@ -25,7 +25,7 @@ class VehicleFactory extends Factory
             'model' => $this->faker->word,
             'price' => $this->faker->randomNumber(rand(3, 6)), 
             'assembler' => $this->faker->company,
-            'year' => $this->faker->year,
+            'year' => $this->faker->date('Y-m-d'),
             'setup' => null,
             'is_new' => rand(0,1),
             'has_financing' => rand(0,1),

@@ -21,6 +21,6 @@ class Type extends Model
 
     public function vehicles()
     {
-        return $this->belongsToMany(Vehicle::class);
+        return $this->hasMany(Vehicle::class);
     }
 }

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Store;
+use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class StoreFactory extends Factory
+class TypeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Store::class;
+    protected $model = Type::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,7 @@ class StoreFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company,
-            'register_number' => $this->faker->randomNumber(8),
-            'legal_name' => $this->faker->company,
-            'is_active' => rand(0, 1)
+            'name' => $this->faker->word
         ];
     }
 }

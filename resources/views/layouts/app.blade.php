@@ -3,6 +3,7 @@
     
     @include('partials.header')
 
+    <!-- get dark by session? -->
     <body class="antialiased">
         
         @yield('content')
