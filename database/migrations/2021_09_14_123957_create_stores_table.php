@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('register_number');
+            $table->string('legal_name');
             $table->boolean('is_active')->nullable();
             $table->timestamps();
         });
