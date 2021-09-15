@@ -14,31 +14,36 @@
         
         <!-- menu links -->
         <div class="w-full h-full flex flex-col justify-center items-center border-t border-b border-gray-300 dark:border-gray-700">
-            <a href="{{ route('/') }}" class="w-14 h-14 flex items-center justify-center">
-                <i class="fas fa-home text-2xl text-gray-800 hover:text-green-300 
+            <a href="{{ route('panel.store.index') }}" class="w-14 h-14 flex items-center justify-center">
+                <i class="fas fa-home text-2xl text-gray-800 hover:text-green-300
+                transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125 
                 dark:text-gray-300 dark:hover:text-green-700"></i>
             </a>
     
-            <a href="{{ route('panel.store.index') }}" class="w-14 h-14 flex items-center justify-center">
+            <a href="{{ route('panel.store.vehicles.index') }}" class="w-14 h-14 flex items-center justify-center">
                 <i class="fas fa-car text-2xl text-gray-800 hover:text-green-300
+                transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125 
                 dark:text-gray-300 dark:hover:text-green-700"></i>
             </a>
     
             <a href="#" class="w-14 h-14 flex items-center justify-center">
                 <i class="fas fa-money-bill-wave text-2xl text-gray-800 hover:text-green-300
+                transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125 
                 dark:text-gray-300 dark:hover:text-green-700"></i>
             </a>
     
             <a href="#" class="w-14 h-14 flex items-center justify-center">
                 <i class="fas fa-user-circle text-2xl text-gray-800 hover:text-green-300
+                transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125 
                 dark:text-gray-300 dark:hover:text-green-700"></i>
             </a>
         </div>
         
         <!-- Bottom actions -->
         <div class="w-full h-40 flex flex-col items-center justify-end">
-            <a href="#" class="w-14 h-14 flex items-center justify-center" alt="{{ __('Logout')}}">
-                <i class="fas fa-door-open text-2xl text-gray-800 hover:text-green-300 
+            <a href="{{ route('/') }}" class="w-14 h-14 flex items-center justify-center m-4" alt="{{ __('Logout')}}">
+                <i class="fas fa-door-open text-2xl text-gray-800 hover:text-green-300
+                transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125  
                 dark:text-gray-300 dark:hover:text-green-700"></i>
             </a>
         </div>

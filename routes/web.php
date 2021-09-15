@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('landing.welcome');
 })->name('/');
 
+//landing routes
+
+//protected routes
 Route::get('/store', function() {
     return view('panel.store.index');
 })->name('panel.store.index');
+
+Route::get('/store/vehicles', function() {
+    return view('panel.store.vehicles.index');
+})->name('panel.store.vehicles.index');

@@ -5,9 +5,6 @@
 
     <!-- get dark by session? -->
     <body class="antialiased flex w-screen h-screen">
-        
-        <!-- crazy sidmenu -->
-        @include('partials.sidebar')
 
         @yield('content')
 
