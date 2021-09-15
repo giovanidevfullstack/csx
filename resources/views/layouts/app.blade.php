@@ -4,8 +4,11 @@
     @include('partials.header')
 
     <!-- get dark by session? -->
-    <body class="antialiased">
+    <body class="antialiased w-screen h-screen bg-blue-100">
         
+        <!-- crazy sidmenu -->
+        @include('partials.sidebar')
+
         @yield('content')
 
         <!-- Scripts -->

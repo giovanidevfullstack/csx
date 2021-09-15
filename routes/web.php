@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing.welcome');
 })->name('/');
+
+Route::get('/store', function() {
+    return view('panel.store.index');
+})->name('panel.store.index');
