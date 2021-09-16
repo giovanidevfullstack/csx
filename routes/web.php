@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 //landing routes
 
-//protected routes
+//protected routes (breeze)
 Route::get('/store', function() {
     return view('panel.store.index');
 })->name('panel.store.index');
