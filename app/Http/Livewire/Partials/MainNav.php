@@ -6,9 +6,12 @@ use Livewire\Component;
 
 class MainNav extends Component
 {   
-    //for dev
-    //** extract to a table with seeders */
-    //** menus will depend by plan [month, bianual, year] */
+    /**
+     * * - extract to a table with seeders
+     * * - Here we get menus e build them accordingly with user role and plan active
+     * * -- menus will depend by plan [month, bianual, year] 
+     * * - Listen for notification event and update de icon value
+     */
     public $menus = [
         [
             'name' => 'home',
