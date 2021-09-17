@@ -6,19 +6,25 @@
             bg-gray-200 border-t border-b border-r border-gray-300
             dark:bg-gray-800 dark:border-gray-700 shadow-r-3-xl">
     
-            <!-- store logo -->
-            <div class="w-full h-40 flex flex-col justify-center items-center m-4">
-                <img src="{{ asset('img/car.jpg')}}" alt=""
-                    class="w-12 h-12 rounded-full"/>
+            <!-- Account -->
+            <div class="w-full h-40 text-center p-2">
+                <button class="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-400 hover:border-green-300 dark:hover:border-gray-300">
+                    <img src="{{ asset('img/car.jpg')}}" alt=""
+                    class="w-full h-full object-cover"/>
+                </button>
+
+                <!-- Wire: Account dropdown menu -->
+                <!-- Wire: Account dropdown menu -->
     
-                <span class="text-xs text-center pt-2 m-2 text-gray-600 dark:text-gray-500">My Company Name</span>
+                <span class="text-xs text-gray-600 dark:text-gray-500">My Company Name</span>
             </div>
+
             
             <!-- menu links -->
-            <div class="w-full h-full flex flex-col justify-center items-center border-t border-b border-gray-300 dark:border-gray-700">
+            <div class="w-full h-full flex flex-col justify-center border-t border-b border-gray-300 dark:border-gray-700">
 
                 @foreach ($menus as $menu)
-                    <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" class="w-14 h-14 flex items-center justify-center">
+                    <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" class="h-14 flex items-center justify-center">
                         <i class="fas {{ $menu['icon'] }} text-xl text-gray-600 hover:text-green-300
                         transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125 
                         dark:text-gray-700 dark:hover:text-gray-300"></i>
@@ -34,8 +40,8 @@
             </div>
             
             <!-- Bottom actions -->
-            <div class="w-full h-40 flex flex-col items-center justify-end">
-                <a href="{{ route('/') }}" class="w-14 h-14 flex items-center justify-center m-4" alt="{{ __('Logout')}}">
+            <div class="w-full h-40">
+                <a href="{{ route('/') }}" class="h-14 flex items-center justify-center m-4" alt="{{ __('Logout')}}">
                     <i class="fas fa-door-open text-xl text-gray-600 hover:text-green-300
                     transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125  
                     dark:text-gray-700 dark:hover:text-gray-300"></i>
