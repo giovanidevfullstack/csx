@@ -7,18 +7,7 @@
             dark:bg-gray-800 dark:border-gray-700 shadow-r-3-xl">
     
             <!-- Account -->
-            <div class="w-full h-40 text-center p-2">
-                <button class="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-400 hover:border-green-300 dark:hover:border-gray-300">
-                    <img src="{{ asset('img/car.jpg')}}" alt=""
-                    class="w-full h-full object-cover"/>
-                </button>
-
-                <!-- Wire: Account dropdown menu -->
-                <!-- Wire: Account dropdown menu -->
-    
-                <span class="text-xs text-gray-600 dark:text-gray-500">My Company Name</span>
-            </div>
-
+            @livewire('partials.components.account-dropdown')
             
             <!-- menu links -->
             <div class="w-full h-full flex flex-col justify-center border-t border-b border-gray-300 dark:border-gray-700">
@@ -39,7 +28,7 @@
 
             </div>
             
-            <!-- Bottom actions -->
+            <!-- Other Actions -->
             <div class="w-full h-40">
                 <a href="{{ route('/') }}" class="h-14 flex items-center justify-center m-4" alt="{{ __('Logout')}}">
                     <i class="fas fa-door-open text-xl text-gray-600 hover:text-green-300
