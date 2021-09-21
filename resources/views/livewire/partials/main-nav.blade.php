@@ -13,41 +13,41 @@
             <div class="w-full h-full border-t border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
 
                 <!-- Store -->
-                @foreach ($menus as $menu)
-                <h3 class="pt-5 pb-3 uppercase text-gray-400">{{ $menu['title'] }}</h3>
-
-                    @foreach ($menu['links'] as $link)
+                @foreach ($menus as $title => $menu)
+                    <h3 class="pt-5 pb-3 uppercase text-gray-400">{{ $title }}</h3>
+                
+                    @foreach($menu as $link)
                         @if($isOpen)
-                            <a href="{{ is_null($link['route']) ?  '#' : route($link['route']) }}" 
+                        <a href="{{ is_null($link->route) ?  '#' : route($link->route) }}" 
                                 class="py-2 flex justify-between text-sm
                                 text-gray-500 dark:text-gray-700 
                                 hover:text-indigo-400 dark:hover:text-gray-300">
 
                                 <div class="flex items-center">
-                                    <i class="fas {{ $link['icon'] }}"></i>
+                                    <i class="fas {{ $link->icon }}"></i>
 
-                                    <span class="pl-4">{{ $link['name'] }}</span>
+                                    <span class="pl-4">{{ $link->name }}</span>
                                 </div>
 
                                 <div class="flex items-center">
-                                    @if (!empty($link['new_msg']))
+                                    @if (!empty($link->new_msgs))
                                         <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
-                                            {{ $link['new_msg'] }}
+                                            {{ $link->new_msgs }}
                                         </span>
                                     @endif
                                 </div>
                             </a>
                         @else
-                            <a href="{{ is_null($link['route']) ?  '#' : route($link['route']) }}" 
+                            <a href="{{ is_null($link->route) ?  '#' : route($link->route) }}" 
                                 class="py-4 flex justify-center text-md
                                 text-gray-500 dark:text-gray-700 
                                 hover:text-indigo-400 dark:hover:text-gray-300">
 
-                                <i class="fas {{ $link['icon'] }}"></i>
+                                <i class="fas {{ $link->icon }}"></i>
 
-                                @if (!empty($link['new_msg']))
+                                @if (!empty($link->new_msgs))
                                     <span class="bg-red-400 absolute w-4 h-4 ml-5 items-center rounded-full text-center text-white text-xs font-light">
-                                        {{ $link['new_msg'] }}
+                                        {{ $link->new_msgs }}
                                     </span>
                                 @endif
                             </a>
