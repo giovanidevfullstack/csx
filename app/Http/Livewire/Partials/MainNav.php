@@ -14,31 +14,57 @@ class MainNav extends Component
      */
     public $menus = [
         [
-            'name' => 'Panel',
-            'icon' => 'fa-home',
-            'route' => 'panel.store.index'
+            'title' => 'Loja',
+            'links' => [
+                [
+                    'name' => 'Panel',
+                    'icon' => 'fa-home',
+                    'route' => 'panel.store.index'
+                ],
+                [
+                    'name' => 'Cars',
+                    'icon' => 'fa-car',
+                    'route' => 'panel.store.vehicles.index'
+                ],
+                [
+                    'name' => 'Financial',
+                    'icon' => 'fa-money-bill-wave',
+                    'route' => null,
+                    'new_msg' => 5 
+                ],
+                [
+                    'name' => 'Calendar',
+                    'icon' => 'fa-calendar',
+                    'route' => null
+                ],
+                [
+                    'name' => 'Deals',
+                    'icon' => 'fa-hands-helping',
+                    'route' => null,
+                    'new_msg' => 3 
+                ]
+            ]
         ],
         [
-            'name' => 'Cars',
-            'icon' => 'fa-car',
-            'route' => 'panel.store.vehicles.index'
-        ],
-        [
-            'name' => 'Financial',
-            'icon' => 'fa-money-bill-wave',
-            'route' => null,
-            'new_msg' => 5 
-        ],
-        [
-            'name' => 'Calendar',
-            'icon' => 'fa-calendar',
-            'route' => null
-        ],
-        [
-            'name' => 'Deals',
-            'icon' => 'fa-hands-helping',
-            'route' => null,
-            'new_msg' => 3 
+            'title' => 'Administração',
+            'links' => [
+                [
+                    'name' => 'Log',
+                    'icon' => 'fa-server',
+                    'route' => null, 
+                ],
+                [
+                    'name' => 'Usuários',
+                    'icon' => 'fa-user-lock',
+                    'route' => null,
+                ],
+                [
+                    'name' => 'Segurança',
+                    'icon' => 'fa-shield-alt',
+                    'route' => null,
+                    'new_msg' => 10 
+                ]
+            ]
         ]
     ];
 

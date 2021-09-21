@@ -13,83 +13,46 @@
             <div class="w-full h-full border-t border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
 
                 <!-- Store -->
-                <h3 class="pt-5 pb-3 uppercase text-gray-400">Loja</h3>
                 @foreach ($menus as $menu)
-                    @if($isOpen)
-                        <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" 
-                            class="py-2 flex justify-between text-sm
-                            text-gray-500 dark:text-gray-700 
-                            hover:text-indigo-400 dark:hover:text-gray-300">
+                <h3 class="pt-5 pb-3 uppercase text-gray-400">{{ $menu['title'] }}</h3>
 
-                            <div class="flex items-center">
-                                <i class="fas {{ $menu['icon'] }}"></i>
+                    @foreach ($menu['links'] as $link)
+                        @if($isOpen)
+                            <a href="{{ is_null($link['route']) ?  '#' : route($link['route']) }}" 
+                                class="py-2 flex justify-between text-sm
+                                text-gray-500 dark:text-gray-700 
+                                hover:text-indigo-400 dark:hover:text-gray-300">
 
-                                <span class="pl-4">{{ $menu['name'] }}</span>
-                            </div>
+                                <div class="flex items-center">
+                                    <i class="fas {{ $link['icon'] }}"></i>
 
-                            <div class="flex items-center">
-                                @if (!empty($menu['new_msg']))
-                                    <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
-                                        {{ $menu['new_msg'] }}
+                                    <span class="pl-4">{{ $link['name'] }}</span>
+                                </div>
+
+                                <div class="flex items-center">
+                                    @if (!empty($link['new_msg']))
+                                        <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                            {{ $link['new_msg'] }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </a>
+                        @else
+                            <a href="{{ is_null($link['route']) ?  '#' : route($link['route']) }}" 
+                                class="py-4 flex justify-center text-md
+                                text-gray-500 dark:text-gray-700 
+                                hover:text-indigo-400 dark:hover:text-gray-300">
+
+                                <i class="fas {{ $link['icon'] }}"></i>
+
+                                @if (!empty($link['new_msg']))
+                                    <span class="bg-red-400 absolute w-4 h-4 ml-5 items-center rounded-full text-center text-white text-xs font-light">
+                                        {{ $link['new_msg'] }}
                                     </span>
                                 @endif
-                            </div>
-                        </a>
-                    @else
-                        <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" 
-                            class="py-4 flex justify-center text-md
-                            text-gray-500 dark:text-gray-700 
-                            hover:text-indigo-400 dark:hover:text-gray-300">
-
-                            <i class="fas {{ $menu['icon'] }}"></i>
-
-                            @if (!empty($menu['new_msg']))
-                                <span class="bg-red-400 absolute w-4 h-4 ml-5 items-center rounded-full text-center text-white text-xs font-light">
-                                    {{ $menu['new_msg'] }}
-                                </span>
-                            @endif
-                        </a>
-                    @endif
-                @endforeach
-
-                <!-- Admin -->
-                <h3 class="pt-5 pb-3 uppercase text-gray-400">Administração</h3>
-                @foreach ($menus as $menu)
-                    @if($isOpen)
-                        <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" 
-                            class="py-2 flex justify-between text-sm
-                            text-gray-500 dark:text-gray-700 
-                            hover:text-indigo-400 dark:hover:text-gray-300">
-
-                            <div class="flex items-center">
-                                <i class="fas {{ $menu['icon'] }}"></i>
-
-                                <span class="pl-4">{{ $menu['name'] }}</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                @if (!empty($menu['new_msg']))
-                                    <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
-                                        {{ $menu['new_msg'] }}
-                                    </span>
-                                @endif
-                            </div>
-                        </a>
-                    @else
-                        <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" 
-                            class="py-4 flex justify-center text-md
-                            text-gray-500 dark:text-gray-700 
-                            hover:text-indigo-400 dark:hover:text-gray-300">
-
-                            <i class="fas {{ $menu['icon'] }}"></i>
-
-                            @if (!empty($menu['new_msg']))
-                                <span class="bg-red-400 absolute w-4 h-4 ml-5 items-center rounded-full text-center text-white text-xs font-light">
-                                    {{ $menu['new_msg'] }}
-                                </span>
-                            @endif
-                        </a>
-                    @endif
+                            </a>
+                        @endif
+                    @endforeach
                 @endforeach
             </div>
             
