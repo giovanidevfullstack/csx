@@ -8,12 +8,12 @@ use App\Models\Menu;
 class MainNav extends Component
 {   
     /**
-     * * - extract to a table with seeders
      * * - Here we get menus e build them accordingly with user role and plan active
      * * -- menus will depend by plan [month, bianual, year] 
      * * - Listen for notification event and update de icon value
      */
     
+    //use a set action and emit a evt to dropdown listen
     public $isOpen = true;
 
     public $menus = [];
