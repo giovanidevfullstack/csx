@@ -3,7 +3,7 @@
                 {{ $isOpen ?  'w-64' : 'w-20' }}
                 h-screen p-5 items-center justify-center 
                 border-r border-gray-300 
-                dark:bg-gray-800 dark:border-gray-700">
+                dark:bg-gray-800 dark:border-gray-700 transition-all duration-300">
                 
     
             <!-- Account -->
@@ -65,7 +65,7 @@
                     hover:text-indigo-400 dark:hover:text-gray-300">
 
                     <i class="fas 
-                    {{$isOpen ? 'fa-compress-alt' : 'fa-expand-alt' }}"></i>
+                    {{$isOpen ? 'fa-chevron-left' : 'fa-chevron-right' }}"></i>
                 </button>
             </div>
     </nav>
