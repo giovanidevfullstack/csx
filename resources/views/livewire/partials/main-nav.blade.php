@@ -1,41 +1,65 @@
 <div>
-    <nav class="bg-transparent absolute flex flex-col w-20 h-screen py-2 items-start justify-center dark:bg-gray-900">
-
-        <!-- menu content wrapper -->
-        <div class="flex flex-col w-10/12 h-4/6 items-center rounded-r-lg space-y-2 
-            bg-gray-200 border-t border-b border-r border-gray-300
-            dark:bg-gray-800 dark:border-gray-700 shadow-r-3-xl">
+    <nav class="bg-gray-200 flex flex-col w-64 h-screen p-5 items-center justify-center 
+                border-r border-gray-300 
+                dark:bg-gray-800 dark:border-gray-700">
+                
     
             <!-- Account -->
             @livewire('partials.components.account-dropdown')
             
-            <!-- menu links -->
-            <div class="w-full h-full flex flex-col justify-center border-t border-b border-gray-300 dark:border-gray-700">
+            <!-- Menus -->
+            <div class="w-full h-full border-t border-b border-gray-300 dark:border-gray-700 overflow-y-auto">
 
+                <!-- Store -->
+                <h3 class="pt-5 pb-3 uppercase text-gray-400">Loja</h3>
                 @foreach ($menus as $menu)
-                    <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" class="h-14 flex items-center justify-center">
-                        <i class="fas {{ $menu['icon'] }} text-xl text-gray-600 hover:text-green-300
-                        transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125 
-                        dark:text-gray-700 dark:hover:text-gray-300"></i>
+                    <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" 
+                        class="py-2 flex justify-between text-sm
+                        text-gray-500 dark:text-gray-700 
+                        hover:text-indigo-400 dark:hover:text-gray-300">
 
-                        @if (!empty($menu['new_msg']))
-                            <span class="bg-red-500 text-white text-xs rounded-full w-4 h-4 text-center items-center absolute mb-5 ml-5">
-                                {{ $menu['new_msg'] }}
-                            </span>
-                        @endif
+                        <div class="flex items-center">
+                            <i class="fas {{ $menu['icon'] }}"></i>
+                            <span class="pl-4">{{ $menu['name'] }}</span>
+                        </div>
+
+                        <div class="flex items-center">
+                            @if (!empty($menu['new_msg']))
+                                <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                    {{ $menu['new_msg'] }}
+                                </span>
+                            @endif
+                        </div>
                     </a>
                 @endforeach
 
+                <!-- Admin -->
+                <h3 class="pt-5 pb-3 uppercase text-gray-400">Administração</h3>
+                @foreach ($menus as $menu)
+                    <a href="{{ is_null($menu['route']) ?  '#' : route($menu['route']) }}" 
+                        class="py-2 flex justify-between text-sm
+                        text-gray-500 dark:text-gray-700 
+                        hover:text-indigo-400 dark:hover:text-gray-300">
+
+                        <div class="flex items-center">
+                            <i class="fas {{ $menu['icon'] }}"></i>
+                            <span class="pl-4">{{ $menu['name'] }}</span>
+                        </div>
+
+                        <div class="flex items-center">
+                            @if (!empty($menu['new_msg']))
+                                <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                    {{ $menu['new_msg'] }}
+                                </span>
+                            @endif
+                        </div>
+                    </a>
+                @endforeach
             </div>
             
             <!-- Other Actions -->
-            <div class="w-full h-40">
-                <a href="{{ route('/') }}" class="h-14 flex items-center justify-center m-4" alt="{{ __('Logout')}}">
-                    <i class="fas fa-door-open text-xl text-gray-600 hover:text-green-300
-                    transition duration-200 ease-in-out transform hover:translate-y-1 hover:scale-125  
-                    dark:text-gray-700 dark:hover:text-gray-300"></i>
-                </a>
+            <div class="w-full h-40 text-center">
+                something
             </div>
-        </div>
     </nav>
 </div>

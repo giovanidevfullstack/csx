@@ -14,28 +14,28 @@ class MainNav extends Component
      */
     public $menus = [
         [
-            'name' => 'home',
+            'name' => 'Panel',
             'icon' => 'fa-home',
             'route' => 'panel.store.index'
         ],
         [
-            'name' => 'cars',
+            'name' => 'Cars',
             'icon' => 'fa-car',
             'route' => 'panel.store.vehicles.index'
         ],
         [
-            'name' => 'fin',
+            'name' => 'Financial',
             'icon' => 'fa-money-bill-wave',
             'route' => null,
             'new_msg' => 5 
         ],
         [
-            'name' => 'calendar',
+            'name' => 'Calendar',
             'icon' => 'fa-calendar',
             'route' => null
         ],
         [
-            'name' => 'deals',
+            'name' => 'Deals',
             'icon' => 'fa-hands-helping',
             'route' => null,
             'new_msg' => 3 
