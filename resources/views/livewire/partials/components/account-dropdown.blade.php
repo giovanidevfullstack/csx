@@ -16,7 +16,7 @@
             tabindex="-1">
         </button>
 
-        <div class="left-0 z-10 absolute flex flex-col w-60 h-auto py-4 
+        <div class="left-2 z-10 absolute flex flex-col w-60 h-auto py-4 
             bg-gray-200 border border-gray-300 rounded-lg shadow-2xl
             dark:bg-gray-800 dark:border-gray-600
             {{$isOpen ? '' : 'hidden' }}">

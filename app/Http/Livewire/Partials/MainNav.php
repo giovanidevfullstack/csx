@@ -42,6 +42,8 @@ class MainNav extends Component
         ]
     ];
 
+    public $isOpen = true;
+
     public function render()
     {
         return view('livewire.partials.main-nav');
