@@ -52,4 +52,13 @@ class DashboardTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /** 
+     * Main Nav is present
+     * @test 
+     *  */
+    function dashboard_contains_main_nav_component()
+    {
+        $this->get(route('dashboard.store.index'))->assertSeeLivewire('partials.main-nav');
+    }
 }
