@@ -23,14 +23,14 @@ class MenuSeeder extends Seeder
             'title' => 'Loja',
             'links' => [
                 [
-                    'name' => 'Panel',
+                    'name' => 'Dashboard',
                     'icon' => 'fa-home',
-                    'route' => 'panel.store.index'
+                    'route' => 'dashboard.store.index'
                 ],
                 [
                     'name' => 'Cars',
                     'icon' => 'fa-car',
-                    'route' => 'panel.store.vehicles.index'
+                    'route' => 'dashboard.store.vehicles.index'
                 ],
                 [
                     'name' => 'Financial',

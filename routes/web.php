@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 //protected routes (breeze)
 Route::get('/store', function() {
-    return view('panel.store.index');
-})->name('panel.store.index');
+    return view('dashboard.store.index');
+})->name('dashboard.store.index');
 
 Route::get('/store/vehicles', function() {
-    return view('panel.store.vehicles.index');
-})->name('panel.store.vehicles.index');
+    return view('dashboard.store.vehicles.index');
+})->name('dashboard.store.vehicles.index');
