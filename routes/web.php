@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 //landing routes
 
-//protected routes (breeze)
+/** 
+ * Todo: Auth 
+ */
+
+//protected routes
 Route::get('/store', function() {
     return view('dashboard.store.index');
 })->name('dashboard.store.index');

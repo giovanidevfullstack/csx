@@ -14,7 +14,10 @@ class AddFkTypeIdVehicleTable extends Migration
     public function up()
     {
         Schema::table('vehicles', function (Blueprint $table) {
-            $table->foreignId('type_id')->after('id')->constrained();
+            $table->foreignId('type_id')
+                ->after('id')
+                ->nullable()
+                ->constrained();
         });
     }
 

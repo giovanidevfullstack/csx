@@ -14,7 +14,10 @@ class AddFkUserDocumentsTable extends Migration
     public function up()
     {
         Schema::table('user_documents', function (Blueprint $table) {
-            $table->foreignId('user_id')->after('id')->constrained();
+            $table->foreignId('user_id')
+                ->after('id')
+                ->nullable()
+                ->constrained();
         });
     }
 
