@@ -7,7 +7,9 @@
                 
     
             <!-- Account -->
-            @livewire('partials.components.account-dropdown')
+            <div class="{{ $isOpen ? '' : 'my-5 py-5'}}">
+                @livewire('partials.components.account-dropdown')
+            </div>
             
             <!-- Menus -->
             <div class="w-full h-full border-t border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
