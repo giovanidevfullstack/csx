@@ -3,6 +3,10 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Models\Menu;
+use Livewire\Livewire;
+use Illuminate\Support\Collection;
+use App\Http\Livewire\Partials\MainNav;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -60,5 +64,15 @@ class DashboardTest extends TestCase
     function dashboard_contains_main_nav_component()
     {
         $this->get(route('dashboard.store.index'))->assertSeeLivewire('partials.main-nav');
+    }
+
+    /** 
+     * Main Nav contains menus list
+     * @test 
+     *  */
+    function assert_main_nav_contains_menus_list()
+    {
+        $menus = Menu::all()->groupBy('title')->toBase();
+        Livewire::test(MainNav::class)->assertSet('menus', $menus);
     }
 }
