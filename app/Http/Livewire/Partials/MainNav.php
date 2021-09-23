@@ -13,8 +13,7 @@ class MainNav extends Component
      * * - Listen for notification event and update de icon value
      */
     
-    //use a set action and emit a evt to dropdown listen
-    public $isOpen = false;
+    public $isOpen = true;
 
     public $menus = [];
 
