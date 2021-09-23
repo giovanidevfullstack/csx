@@ -7,7 +7,6 @@ use App\Models\Menu;
 
 class MenuSeeder extends Seeder
 {
-
     // protected $icons = [
     //     'fa-home',
     //     'fa-car',
@@ -18,6 +17,7 @@ class MenuSeeder extends Seeder
     //     'fa-user-lock',
     //     'fa-shield-alt'
     // ];
+
     public $menus = [
         [
             'title' => 'Loja',
@@ -58,17 +58,20 @@ class MenuSeeder extends Seeder
                     'name' => 'Log',
                     'icon' => 'fa-server',
                     'route' => null, 
+                    'is_admin' => 1
                 ],
                 [
                     'name' => 'Usuários',
                     'icon' => 'fa-user-lock',
                     'route' => null,
+                    'is_admin' => 1
                 ],
                 [
                     'name' => 'Segurança',
                     'icon' => 'fa-shield-alt',
                     'route' => null,
-                    'new_msg' => 10 
+                    'new_msg' => 10, 
+                    'is_admin' => 1
                 ]
             ]
         ]
@@ -83,14 +86,15 @@ class MenuSeeder extends Seeder
     {
         foreach($this->menus as $k => $menu){
             $title = $menu['title'];
-
+            
             foreach($menu['links'] as $j => $link){
                 Menu::create([
                     'title' => $title,
                     'name' => $link['name'],
                     'icon' => $link['icon'],
                     'route' => $link['route'],
-                    'new_msgs' => rand(0,5)
+                    'new_msgs' => rand(0,5),
+                    'is_admin' => $link['is_admin'] ?? null
                 ]);
             };
         }

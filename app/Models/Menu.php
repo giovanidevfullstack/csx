@@ -20,6 +20,7 @@ class Menu extends Model
         'name',
         'icon',
         'route',
-        'new_msgs'
+        'new_msgs',
+        'is_admin'
     ];
 }

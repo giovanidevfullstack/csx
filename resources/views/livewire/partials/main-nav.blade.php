@@ -14,29 +14,80 @@
             <!-- Menus -->
             <div class="w-full h-full border-t border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
 
-                @foreach ($menus as $title => $menu)
-                    <h3 class="
-                        {{ ! $isOpen ? 'text-sm break-words' : 'ml-5'}}
-                        pt-5 pb-3 uppercase text-gray-400">{{ $title }}</h3>
-                
-                    @foreach($menu as $link)
+                <!-- store -->
+                @foreach ($globalMenus as $k => $menu)                    
+                    @if($loop->first)
+                        <h3 class="
+                            {{ ! $isOpen ? 'text-sm break-words' : 'ml-5'}}
+                            pt-5 pb-3 uppercase text-gray-400">{{ $menu->title }}</h3>
+                    @endif
+                    
+                    @if($isOpen)
+                        <div class="ml-5">
+                            <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
+                                class="py-2 flex justify-between text-sm
+                                text-gray-500 dark:text-gray-700 
+                                hover:text-indigo-400 dark:hover:text-gray-300">
+
+                                <div class="flex items-center">
+                                    <i class="fas {{ $menu->icon }}"></i>
+
+                                    <span class="pl-4">{{ $menu->name }}</span>
+                                </div>
+
+                                <div class="flex items-center">
+                                    @if (!empty($menu->new_msgs))
+                                        <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                            {{ $menu->new_msgs }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </a>
+                        </div>
+                    @else
+                        <!-- closed -->
+                        <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
+                            class="w-full h-10 flex justify-center items-center text-md
+                            text-gray-500 dark:text-gray-700 
+                            hover:text-indigo-400 dark:hover:text-gray-300">
+
+                            <i class="fas {{ $menu->icon }}"></i>
+
+                            @if (!empty($menu->new_msgs))
+                                <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light">
+                                    {{ $menu->new_msgs }}
+                                </span>
+                            @endif
+                        </a>
+                    @endif
+                @endforeach
+
+                <!-- admin -->
+                @can('only-admin')
+                    @foreach ($adminMenus as $k => $menu)                    
+                        @if($loop->first)
+                            <h3 class="
+                                {{ ! $isOpen ? 'text-sm break-words' : 'ml-5'}}
+                                pt-5 pb-3 uppercase text-gray-400">{{ $menu->title }}</h3>
+                        @endif
+                        
                         @if($isOpen)
                             <div class="ml-5">
-                                <a href="{{ is_null($link->route) ?  '#' : route($link->route) }}" 
+                                <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
                                     class="py-2 flex justify-between text-sm
                                     text-gray-500 dark:text-gray-700 
                                     hover:text-indigo-400 dark:hover:text-gray-300">
 
                                     <div class="flex items-center">
-                                        <i class="fas {{ $link->icon }}"></i>
+                                        <i class="fas {{ $menu->icon }}"></i>
 
-                                        <span class="pl-4">{{ $link->name }}</span>
+                                        <span class="pl-4">{{ $menu->name }}</span>
                                     </div>
 
                                     <div class="flex items-center">
-                                        @if (!empty($link->new_msgs))
+                                        @if (!empty($menu->new_msgs))
                                             <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
-                                                {{ $link->new_msgs }}
+                                                {{ $menu->new_msgs }}
                                             </span>
                                         @endif
                                     </div>
@@ -44,22 +95,22 @@
                             </div>
                         @else
                             <!-- closed -->
-                            <a href="{{ is_null($link->route) ?  '#' : route($link->route) }}" 
+                            <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
                                 class="w-full h-10 flex justify-center items-center text-md
                                 text-gray-500 dark:text-gray-700 
                                 hover:text-indigo-400 dark:hover:text-gray-300">
 
-                                <i class="fas {{ $link->icon }}"></i>
+                                <i class="fas {{ $menu->icon }}"></i>
 
-                                @if (!empty($link->new_msgs))
+                                @if (!empty($menu->new_msgs))
                                     <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light">
-                                        {{ $link->new_msgs }}
+                                        {{ $menu->new_msgs }}
                                     </span>
                                 @endif
                             </a>
                         @endif
                     @endforeach
-                @endforeach
+                @endcan
             </div>
             
             <!-- Other Actions -->

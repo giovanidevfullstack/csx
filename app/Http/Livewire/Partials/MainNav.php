@@ -7,19 +7,18 @@ use App\Models\Menu;
 
 class MainNav extends Component
 {   
-    /**
-     * * - Here we get menus e build them accordingly with user role and plan active
-     * * -- menus will depend by plan [month, bianual, year] 
-     * * - Listen for notification event and update de icon value
-     */
-    
     public $isOpen = true;
 
-    public $menus = [];
+    public $globalMenus = [];
+
+    public $adminMenus = [];
 
     public function render()
     {
-        $this->menus = Menu::all()->groupBy('title')->toBase();
+        $this->globalMenus = Menu::where('is_admin', '!=', 1)
+                                ->orWhereNull('is_admin')
+                                ->get();
+        $this->adminMenus = Menu::where(['is_admin' => 1])->get();
         return view('livewire.partials.main-nav');
     }
 }
