@@ -14,7 +14,7 @@ class MainNav extends Component
      */
     
     //use a set action and emit a evt to dropdown listen
-    public $isOpen = true;
+    public $isOpen = false;
 
     public $menus = [];
 

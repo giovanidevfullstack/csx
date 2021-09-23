@@ -42,18 +42,21 @@
                                 </div>
                             </a>
                         @else
+                            <!-- closed -->
                             <a href="{{ is_null($link->route) ?  '#' : route($link->route) }}" 
                                 class="py-4 flex justify-center text-md
                                 text-gray-500 dark:text-gray-700 
                                 hover:text-indigo-400 dark:hover:text-gray-300">
 
-                                <i class="fas {{ $link->icon }}"></i>
+                                <div>
+                                    <i class="fas {{ $link->icon }}"></i>
 
-                                @if (!empty($link->new_msgs))
-                                    <span class="bg-red-400 absolute w-4 h-4 ml-5 items-center rounded-full text-center text-white text-xs font-light">
-                                        {{ $link->new_msgs }}
-                                    </span>
-                                @endif
+                                    @if (!empty($link->new_msgs))
+                                        <span class="bg-red-400 absolute w-4 h-4 items-center rounded-full text-center text-white text-xs font-light">
+                                            {{ $link->new_msgs }}
+                                        </span>
+                                    @endif
+                                </div>
                             </a>
                         @endif
                     @endforeach
