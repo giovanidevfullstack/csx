@@ -24,7 +24,7 @@ class MenuSeeder extends Seeder
             'links' => [
                 [
                     'name' => 'Dashboard',
-                    'icon' => 'fa-home',
+                    'icon' => 'fa-tachometer-alt',
                     'route' => 'dashboard.store.index'
                 ],
                 [
