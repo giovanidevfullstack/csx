@@ -16,7 +16,9 @@
 
                 <!-- Store -->
                 @foreach ($menus as $title => $menu)
-                    <h3 class="pt-5 pb-3 uppercase text-gray-400">{{ $title }}</h3>
+                    <h3 class="
+                        {{ ! $isOpen ? 'text-sm break-words' : ''}}
+                        pt-5 pb-3 uppercase text-gray-400">{{ $title }}</h3>
                 
                     @foreach($menu as $link)
                         @if($isOpen)
