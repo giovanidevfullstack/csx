@@ -8,6 +8,8 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 
 class AuthServiceProvider extends ServiceProvider
 {
+    private const IS_ADMIN = 1;
+
     /**
      * The policy mappings for the application.
      *
@@ -27,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('only-admin', function (User $user) {
-            return $user->is_admin === 1;
+            return $user->is_admin === self::IS_ADMIN;
         });
     }
 }
