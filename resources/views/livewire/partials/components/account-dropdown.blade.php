@@ -39,14 +39,24 @@
                 </div>
 
                 <div>
-                    <button 
-                        wire:click="toggleDark"
-                        class="bg-gray-500 w-full h-full rounded-full">adasd
-                    </button>
+                    <input 
+                        type="checkbox" 
+                        name="" 
+                        id="toggleDark" 
+                        class="hidden"
+                        {{ session()->get('isDark') ? 'checked' : '' }}/>
+
+                    <label for="toggleDark">
+                        <div class="w-9 h-5 flex items-center bg-gray-500 rounded-full p-1
+                            dark:bg-gray-500 dark:hover:bg-gray-500">
+                            <div class="toggle-dot w-4 h-4 bg-gray-100 rounded-full shadow-md 
+                                transform duration-300 ease-in-out"></div>
+                        </div>
+                    </label>
                 </div>
             </div>
 
-            <!-- other links -->
+            <!-- other links temaplte -->
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
@@ -63,6 +73,7 @@
                     </button>
                 </div> --}}
             </div>
+
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
@@ -79,6 +90,7 @@
                     </button>
                 </div> --}}
             </div>
+
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
@@ -95,7 +107,7 @@
                     </button>
                 </div> --}}
             </div>
-            <!-- end other links -->
+            <!-- end other links temaplte -->
 
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
@@ -113,7 +125,6 @@
                         <i class="fas fa-door-open"></i> {{ __('Logout')}}
                     </button>
                 </form>
-                
             </div>
             
             
@@ -121,3 +132,14 @@
         <!-- dropdown menu -->
     </div>
 </div>
+
+<script>
+    const checkbox = document.querySelector('#toggleDark');
+    const html = document.querySelector('html');
+
+    const toggleDarkMode = () => {
+        Livewire.emit('toggled')
+    }
+
+    checkbox.addEventListener('click', toggleDarkMode);
+</script>
