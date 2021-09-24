@@ -7,12 +7,10 @@
                 
     
             <!-- Account -->
-            <div class="{{ $isOpen ? '' : 'my-5 py-5'}}">
-                @livewire('partials.components.account-dropdown')
-            </div>
+            @livewire('partials.components.account-dropdown')
             
             <!-- Menus -->
-            <div class="w-full h-full border-t border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
+            <div class="w-full h-full border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
 
                 <!-- store -->
                 @foreach ($globalMenus as $k => $menu)                    
@@ -116,7 +114,7 @@
             </div>
             
             <!-- Other Actions -->
-            <div class="w-full h-40 flex text-center items-center justify-center">
+            <div class="w-full h-10 flex text-center items-center justify-end pt-5">
                 <button 
                     wire:click="$toggle('isOpen')"
                     tabindex="-1"
