@@ -4,7 +4,8 @@
     @include('partials.header')
 
     <!-- get dark by session? -->
-    <body class="antialiased flex w-screen h-screen">
+    <body class="antialiased flex w-screen h-screen
+        {{ session()->get('isDark') ? 'dark' : '' }}">
         
         <!-- crazy sidmenu -->
         @include('partials.sidebar')

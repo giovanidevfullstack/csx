@@ -21,6 +21,17 @@
             dark:bg-gray-800 dark:border-gray-600
             {{$isOpen ? '' : 'hidden' }}">
 
+            <!-- Dark Toogle -->   
+            <div class="my-2">     
+                <button 
+                    wire:click="toggleDark"
+                    class="items-center justify-center text-sm w-full
+                    hover:bg-indigo-400 text-gray-500 hover:text-white dark:hover:bg-gray-300 dark:hover:text-gray-600">
+                    
+                    <i class="fas {{ session()->get('isDark') ? 'fa-sun' : 'fa-moon' }}"></i>
+                </button>
+            </div>
+
             <h1 class="text-gray-400 dark:text-gray-200 uppercase text-sm p-1">Minha conta</h1>
             <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
             <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
