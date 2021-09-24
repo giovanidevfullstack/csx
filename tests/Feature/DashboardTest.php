@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\Menu;
+use App\Models\User;
 use Livewire\Livewire;
 use Illuminate\Support\Collection;
 use App\Http\Livewire\Partials\MainNav;
@@ -40,7 +41,9 @@ class DashboardTest extends TestCase
      */
     public function can_see_dashboard()
     {        
-        $response = $this->get(route('dashboard.store.index'));
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get(route('dashboard.store.index'));
         
         $response->assertStatus(200);
     }
@@ -52,27 +55,69 @@ class DashboardTest extends TestCase
      */
     public function can_see_dashboard_vehicles()
     {
-        $response = $this->get(route('dashboard.store.vehicles.index'));
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get(route('dashboard.store.vehicles.index'));
 
         $response->assertStatus(200);
     }
 
     /** 
      * Main Nav is present
+     * 
      * @test 
      *  */
     function dashboard_contains_main_nav_component()
     {
-        $this->get(route('dashboard.store.index'))->assertSeeLivewire('partials.main-nav');
+        $user = User::factory()->create();
+        
+        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.main-nav');
     }
 
     /** 
      * Main Nav contains menus list
+     * 
      * @test 
      *  */
     function assert_main_nav_contains_menus_list()
     {
-        $menus = Menu::all()->groupBy('title')->toBase();
-        Livewire::test(MainNav::class)->assertSet('menus', $menus);
+        $globalMenus = Menu::where('is_admin', '!=', 1)
+                                ->orWhereNull('is_admin')
+                                ->get();
+        
+        Livewire::test(MainNav::class)->assertSet('globalMenus', $globalMenus);
+
+        $adminMenus = Menu::where(['is_admin' => 1])->get();
+
+        Livewire::test(MainNav::class)->assertSet('adminMenus', $adminMenus);
+    }
+
+    /** 
+     * User can't see adm menus
+     * 
+     * @test 
+     *  */
+    function assert_user_cant_see_adm_menu()
+    {
+        $user = User::factory()->create();
+        $html = 'Administração';
+
+        Livewire::actingAs($user)->test(MainNav::class)->assertDontSeeHtml($html);
+    }
+
+    /** 
+     * Admin can see adm menus
+     * 
+     * @test 
+     *  */
+    function assert_admin_can_see_adm_menu()
+    {
+        $user = $user = User::factory()->create([
+            'is_admin' => 1
+        ]);
+
+        $html = 'Administração';
+
+        Livewire::actingAs($user)->test(MainNav::class)->assertSeeHtml($html);
     }
 }
