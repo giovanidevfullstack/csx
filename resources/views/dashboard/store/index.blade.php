@@ -7,7 +7,8 @@
         dark:bg-gray-900 dark:text-white">
         
         <!-- status bar -->
-        <div class="bg-gray-200 flex flex-row w-full h-48 items-center overflow-x-auto border-b border-gray-300">
+        <div class="bg-gray-200 flex flex-row w-full h-48 items-center overflow-x-auto border-b border-gray-300
+            dark:bg-gray-800 dark:border-gray-600">
 
             <!-- vem calculado do controller -->
             <!-- foreach -->

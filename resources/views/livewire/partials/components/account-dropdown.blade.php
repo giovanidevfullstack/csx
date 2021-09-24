@@ -21,17 +21,17 @@
             dark:bg-gray-800 dark:border-gray-600
             {{$isOpen ? '' : 'hidden' }}">
 
-            <h1 class="dark:text-gray-200 p-1">Minha conta</h1>
-            <a href="#" class="hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm text-gray-500">Link</a> 
-            <a href="#" class="hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm text-gray-500">Link</a> 
-            <a href="#" class="hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm text-gray-500">Link</a> 
+            <h1 class="text-gray-400 dark:text-gray-200 uppercase text-sm p-1">Minha conta</h1>
+            <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
+            <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
+            <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
 
             <div class="border border-gray-300 dark:border-gray-600 my-2"></div>
 
-            <h1 class="dark:text-gray-200 p-1">Configurações</h1>
-            <a href="#" class="hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm text-gray-500">Link</a> 
-            <a href="#" class="hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm text-gray-500">Link</a> 
-            <a href="#" class="hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm text-gray-500">Link</a> 
+            <h1 class="text-gray-400 dark:text-gray-200 uppercase text-sm p-1">Configurações</h1>
+            <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
+            <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
+            <a href="#" class="text-gray-500 hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-sm dark:hover:text-gray-600">Link</a> 
 
             <div class="border border-gray-300 dark:border-gray-600 my-2"></div>
 
@@ -41,7 +41,7 @@
                 <button 
                     type="submit" 
                     class="items-center justify-center text-sm w-full
-                    hover:bg-indigo-400 hover:text-white dark:hover:bg-gray-300 text-gray-500" 
+                    hover:bg-indigo-400 text-gray-500 hover:text-white dark:hover:bg-gray-300 dark:hover:text-gray-600" 
                     alt="{{ __('Logout')}}">
                     
                     <i class="fas fa-door-open"></i> {{ __('Logout')}}

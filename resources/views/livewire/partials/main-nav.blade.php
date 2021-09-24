@@ -28,7 +28,7 @@
                                 class="py-2 m-1 flex justify-between text-sm rounded-md
                                 text-gray-500 border-l-2 border-gray-200
                                 hover:text-indigo-400 hover:border-indigo-400
-                                dark:hover:text-gray-300 dark:text-gray-700 ">
+                                dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 ">
 
                                 <div class="flex items-center pl-3">
                                     <i class="fas {{ $menu->icon }}"></i>
@@ -78,7 +78,7 @@
                                     class="py-2 flex justify-between text-sm rounded-md
                                     text-gray-500 border-l-2 border-gray-200
                                     hover:text-indigo-400 hover:border-indigo-400
-                                    dark:hover:text-gray-300 dark:text-gray-700 ">
+                                    dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 ">
 
                                     <div class="flex items-center pl-3">
                                         <i class="fas {{ $menu->icon }}"></i>
@@ -88,7 +88,7 @@
 
                                     <div class="flex items-center">
                                         @if (!empty($menu->new_msgs))
-                                            <span class="bg-red-500 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                            <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
                                                 {{ $menu->new_msgs }}
                                             </span>
                                         @endif
