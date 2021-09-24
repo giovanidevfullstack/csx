@@ -21,45 +21,9 @@
                     @endif
                     
                     @if($isOpen)
-                        <div class="ml-3">
-                            <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
-                                class="py-2 m-1 flex justify-between text-sm rounded-md
-                                text-gray-500 border-l-2 border-gray-200
-                                hover:text-indigo-400 hover:border-indigo-400
-                                dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 ">
-
-                                <div class="flex items-center pl-3">
-                                    <i class="fas {{ $menu->icon }}"></i>
-
-                                    <span class="pl-4">{{ $menu->name }}</span>
-                                </div>
-
-                                <div class="flex items-center">
-                                    @if (!empty($menu->new_msgs))
-                                        <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center
-                                            dark:bg-gray-600">
-                                            {{ $menu->new_msgs }}
-                                        </span>
-                                    @endif
-                                </div>
-                            </a>
-                        </div>
+                        @livewire('partials.components.menu-link-expanded', ['menu' => $menu])
                     @else
-                        <!-- closed -->
-                        <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
-                            class="w-full h-10 flex justify-center items-center text-md
-                            text-gray-500 dark:text-gray-700 
-                            hover:text-indigo-400 dark:hover:text-gray-300">
-
-                            <i class="fas {{ $menu->icon }}"></i>
-
-                            @if (!empty($menu->new_msgs))
-                                <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light
-                                    dark:bg-gray-600">
-                                    {{ $menu->new_msgs }}
-                                </span>
-                            @endif
-                        </a>
+                        @livewire('partials.components.menu-link-closed', ['menu' => $menu])
                     @endif
                 @endforeach
 
@@ -73,45 +37,10 @@
                         @endif
                         
                         @if($isOpen)
-                            <div class="ml-3">
-                                <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
-                                    class="py-2 flex justify-between text-sm rounded-md
-                                    text-gray-500 border-l-2 border-gray-200
-                                    hover:text-indigo-400 hover:border-indigo-400
-                                    dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 ">
-
-                                    <div class="flex items-center pl-3">
-                                        <i class="fas {{ $menu->icon }}"></i>
-
-                                        <span class="pl-4">{{ $menu->name }}</span>
-                                    </div>
-
-                                    <div class="flex items-center">
-                                        @if (!empty($menu->new_msgs))
-                                            <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center
-                                                dark:bg-gray-600">
-                                                {{ $menu->new_msgs }}
-                                            </span>
-                                        @endif
-                                    </div>
-                                </a>
-                            </div>
+                            @livewire('partials.components.menu-link-expanded', ['menu' => $menu])
                         @else
                             <!-- closed -->
-                            <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
-                                class="w-full h-10 flex justify-center items-center text-md
-                                text-gray-500 dark:text-gray-700 
-                                hover:text-indigo-400 dark:hover:text-gray-300">
-
-                                <i class="fas {{ $menu->icon }}"></i>
-
-                                @if (!empty($menu->new_msgs))
-                                    <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light
-                                        dark:bg-gray-600">
-                                        {{ $menu->new_msgs }}
-                                    </span>
-                                @endif
-                            </a>
+                            @livewire('partials.components.menu-link-closed', ['menu' => $menu])
                         @endif
                     @endforeach
                 @endcan
