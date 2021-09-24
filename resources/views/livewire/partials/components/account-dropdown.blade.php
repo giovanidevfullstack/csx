@@ -29,7 +29,7 @@
             </div>
 
             <!-- Dark Toogle -->   
-            <div class="flex flex-row w-full h-10 px-4 items-center justify-between text-sm
+            <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 border-b border-gray-300 dark:border-gray-600 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
@@ -47,7 +47,7 @@
             </div>
 
             <!-- other links -->
-            <div class="flex flex-row w-full h-10 px-4 items-center justify-between text-sm
+            <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
@@ -63,7 +63,7 @@
                     </button>
                 </div> --}}
             </div>
-            <div class="flex flex-row w-full h-10 px-4 items-center justify-between text-sm
+            <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
@@ -79,7 +79,7 @@
                     </button>
                 </div> --}}
             </div>
-            <div class="flex flex-row w-full h-10 px-4 items-center justify-between text-sm
+            <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
@@ -97,7 +97,7 @@
             </div>
             <!-- end other links -->
 
-            <div class="flex flex-row w-full h-10 px-4 items-center justify-between text-sm
+            <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600
                 border-t border-gray-300 dark:border-gray-600 "> 

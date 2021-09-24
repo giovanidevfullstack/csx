@@ -36,7 +36,8 @@
 
                                 <div class="flex items-center">
                                     @if (!empty($menu->new_msgs))
-                                        <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                        <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center
+                                            dark:bg-gray-600">
                                             {{ $menu->new_msgs }}
                                         </span>
                                     @endif
@@ -53,7 +54,8 @@
                             <i class="fas {{ $menu->icon }}"></i>
 
                             @if (!empty($menu->new_msgs))
-                                <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light">
+                                <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light
+                                    dark:bg-gray-600">
                                     {{ $menu->new_msgs }}
                                 </span>
                             @endif
@@ -86,7 +88,8 @@
 
                                     <div class="flex items-center">
                                         @if (!empty($menu->new_msgs))
-                                            <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center">
+                                            <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center
+                                                dark:bg-gray-600">
                                                 {{ $menu->new_msgs }}
                                             </span>
                                         @endif
@@ -103,7 +106,8 @@
                                 <i class="fas {{ $menu->icon }}"></i>
 
                                 @if (!empty($menu->new_msgs))
-                                    <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light">
+                                    <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light
+                                        dark:bg-gray-600">
                                         {{ $menu->new_msgs }}
                                     </span>
                                 @endif
