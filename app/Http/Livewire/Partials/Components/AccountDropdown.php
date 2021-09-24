@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class AccountDropdown extends Component
 {
-    public $isOpen = false; 
-
     protected $listeners = ['toggled' => 'toggleDark'];
     
     public function render()
