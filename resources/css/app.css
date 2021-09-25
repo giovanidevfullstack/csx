@@ -9,3 +9,13 @@
 
 @tailwind components;
 @tailwind utilities;
+
+/***********************
+        Alpine
+***********************/
+
+[x-cloak] { display: none !important; }
+
+/***********************
+        Custom
+***********************/
