@@ -7,8 +7,6 @@ use App\Models\Menu;
 
 class MainNav extends Component
 {   
-    public $isOpen = true;
-
     public $globalMenus = [];
 
     public $adminMenus = [];
