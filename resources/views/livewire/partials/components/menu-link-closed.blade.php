@@ -2,7 +2,8 @@
     <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
         class="w-full h-10 flex justify-center items-center text-md
         text-gray-500 dark:text-gray-700 
-        hover:text-indigo-400 dark:hover:text-gray-300">
+        hover:text-indigo-400 dark:hover:text-gray-300
+        {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400' : ''}}">
 
         <i class="fas {{ $menu->icon }}"></i>
 

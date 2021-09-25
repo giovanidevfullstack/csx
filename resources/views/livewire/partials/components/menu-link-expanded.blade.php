@@ -4,12 +4,13 @@
             class="py-2 m-1 flex justify-between text-sm rounded-md
             text-gray-500 border-l-2 border-gray-200
             hover:text-indigo-400 hover:border-indigo-400
-            dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 ">
+            dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 
+            {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400 border-indigo-400' : ''}}">
 
             <div class="flex items-center pl-3">
                 <i class="fas {{ $menu->icon }}"></i>
 
-                <span class="pl-4">{{ $menu->name }}</span>
+                <span class="pl-4">{{$menu->name}}</span>
             </div>
 
             <div class="flex items-center">
