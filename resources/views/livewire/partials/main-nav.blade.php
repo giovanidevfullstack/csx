@@ -1,11 +1,11 @@
 <div>
     <nav x-data="{ open: true }" 
-                :class="{ 'w-64' : open, 'w-20' : !open }"
-                class="bg-gray-200 flex flex-col 
-                h-screen p-5 items-center justify-center 
-                border-r border-gray-300 
-                dark:bg-gray-800 dark:border-gray-700 transition-all duration-300"
-                >
+            :class="{ 'w-64' : open, 'w-20' : !open }"
+            class="bg-gray-200 flex flex-col 
+            h-screen p-5 items-center justify-center 
+            border-r border-gray-300 
+            dark:bg-gray-800 dark:border-gray-700 transition-all duration-300"
+            >
                 
     
             <!-- Account -->
@@ -55,10 +55,9 @@
                     class="text-gray-500 dark:text-gray-700 
                     hover:text-indigo-400 dark:hover:text-gray-300">
 
-                    {{-- <i class="fas {{$isOpen ? 'fa-chevron-left' : 'fa-chevron-right' }}"></i> --}}
-                    {{-- <i :class="{ 'fa-chevron-left' : open, 'fa-chevron-right' : !open }" class="fas"></i> --}}
-                    <i class="fas fa-chevron-left"></i>
-                    {{-- :class="{ 'text-sm break-words' : !open, 'ml-5' : open }" --}}
+                    <!-- With dynamic class has a bug -->
+                    <i x-show="open"  class="fas fa-chevron-left"></i>
+                    <i x-show="!open" class="fas fa-chevron-right"></i>
                 </button>
             </div>
     </nav>
