@@ -2,7 +2,7 @@
     <nav x-data="{ open: true }" 
             :class="{ 'w-64' : open, 'w-20' : !open }"
             class="bg-gray-200 flex flex-col 
-            h-screen p-5 items-center justify-center 
+            h-screen p-4 items-center justify-center 
             border-r border-gray-300 
             dark:bg-gray-800 dark:border-gray-700 transition-all duration-300"
             >
@@ -17,7 +17,7 @@
                 <!-- store -->
                 @foreach ($globalMenus as $k => $menu)                    
                     @if($loop->first)
-                        <h3 :class="{ 'text-sm break-words' : !open, 'ml-5' : open }"
+                        <h3 :class="{ 'text-sm break-words text-center' : !open, 'ml-3' : open }"
                             class="pt-5 pb-3 uppercase text-gray-400">{{ $menu->title }}</h3>
                     @endif
                     
@@ -33,7 +33,7 @@
                 @can('only-admin')
                     @foreach ($adminMenus as $k => $menu)                    
                         @if($loop->first)
-                            <h3 :class="{ 'text-sm break-words' : !open, 'ml-5' : open }"
+                            <h3 :class="{ 'text-sm break-words' : !open, 'ml-3' : open }"
                                 class="pt-5 pb-3 uppercase text-gray-400">{{ $menu->title }}</h3>
                         @endif
                         
