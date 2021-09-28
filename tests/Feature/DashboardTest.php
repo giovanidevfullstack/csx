@@ -48,20 +48,6 @@ class DashboardTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /**
-     * Can see dashboard vehicles
-     *
-     * @test
-     */
-    public function can_see_dashboard_vehicles()
-    {
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->get(route('dashboard.store.vehicles.index'));
-
-        $response->assertStatus(200);
-    }
-
     /** 
      * Main Nav is present
      * 
