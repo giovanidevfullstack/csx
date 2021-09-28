@@ -30,7 +30,7 @@ class MenuSeeder extends Seeder
                 [
                     'name' => 'Cars',
                     'icon' => 'fa-car',
-                    'route' => 'dashboard.store.vehicles.index'
+                    'route' => 'dashboard.vehicles.index'
                 ],
                 [
                     'name' => 'Financial',

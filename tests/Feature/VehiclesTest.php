@@ -27,7 +27,7 @@ class VehiclesTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->get(route('dashboard.store.vehicles.index'));
+        $response = $this->actingAs($user)->get(route('dashboard.vehicles.index'));
 
         $response->assertStatus(200);
     }

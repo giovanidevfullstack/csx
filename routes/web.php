@@ -8,6 +8,8 @@ Route::get('/', function () {
 
 //landing routes
 
+//public store routes
+
 //protected routes
 Route::middleware(['auth'])->group(function (){
     Route::get('/store', function() {
@@ -15,8 +17,8 @@ Route::middleware(['auth'])->group(function (){
     })->name('dashboard.store.index');
 
     Route::get('/store/vehicles', function() {
-        return view('dashboard.store.vehicles.index');
-    })->name('dashboard.store.vehicles.index');
+        return view('dashboard.vehicles.index');
+    })->name('dashboard.vehicles.index');
 });
 
 //auth routes
