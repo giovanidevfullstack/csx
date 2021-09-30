@@ -40,12 +40,11 @@
         </div>
 
         <!-- content -->
-        <div class="w-full h-full p-4 overflow-x-hidden overflow-y-auto
+        <div class="w-full h-screen p-5 overflow-x-hidden overflow-y-auto
             bg-gray-300 dark:bg-gray-900">
             
             <!-- graph -->
             @livewire('partials.dash-graph')
-
         </div>
     </div>
     

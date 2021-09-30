@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full h-4/6 mx-auto p-2 rounded-lg
+<div class="flex flex-col w-full h-full mx-auto p-2 rounded-lg
     bg-gray-200 dark:bg-gray-800 shadow-r-3-xl">
 
     <!-- header -->
@@ -7,8 +7,8 @@
     </div>
 
     <!-- content -->
-    <div class="w-full h-full">
-        <div class="w-8/12 h-4/6 mx-auto">
+    <div class="w-full h-full flex items-center">
+        <div class="w-10/12 h-4/6 mx-auto">
             <canvas id="myChart"></canvas>
         </div>
     </div>
