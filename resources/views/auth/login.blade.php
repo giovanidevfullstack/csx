@@ -7,10 +7,12 @@
         dark:bg-gray-900 dark:text-white 
         sm:items-center py-4 sm:pt-0">
         
-        <div class="w-4/12 h-3/6 p-5 flex items-center
-            bg-white" style="border-radius: 50% 5%/ 28% 5%">
+        <div class="w-4/12 h-3/6 px-5 flex items-center
+            bg-white shadow-r-3-xl" style="border-radius: 50% 5%/ 28% 5%">
 
             <div class="w-10/12 h-auto mx-auto">
+                <h1 class="antialiased font-light text-center uppercase text-indigo-400 text-7xl mb-5">CSX</h1>
+
                 <form method="POST" action="{{ route('login.attempt') }}">
                     @csrf
 
@@ -46,7 +48,7 @@
                             <input id="remember_me" type="checkbox" 
                                 class="rounded border-gray-300 text-indigo-600 shadow-sm 
                                 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                            <span class="ml-3 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                            <span class="ml-3 text-sm text-indigo-400">{{ __('Remember me') }}</span>
                         </label>
                     </div>
 
