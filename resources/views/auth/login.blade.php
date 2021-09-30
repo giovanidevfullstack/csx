@@ -15,7 +15,7 @@
 
                 <form method="POST" action="{{ route('login.attempt') }}">
                     @csrf
-
+                    
                     <!-- Email Address -->
                     <div>
                         <label for="email" :value="__('Email')" />
@@ -27,6 +27,12 @@
                                 placeholder="Email"
                                 class="block mt-1 w-full h-10 px-3 py-2 rounded-lg
                                 text-sm text-indigo-400 placeholder-current border border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-600"/>
+                        
+                        @error('email')
+                            <span class="text-red-400 text-sm text-light" role="alert">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
 
                     <!-- Password -->
