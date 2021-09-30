@@ -39,8 +39,12 @@
             
         </div>
 
-        <!-- graph -->
-        <div class="w-full h-full overflow-x-hidden overflow-y-auto">
+        <!-- content -->
+        <div class="w-full h-full p-4 overflow-x-hidden overflow-y-auto
+            bg-gray-300 dark:bg-gray-900">
+            
+            <!-- graph -->
+            @livewire('partials.dash-graph')
 
         </div>
     </div>
