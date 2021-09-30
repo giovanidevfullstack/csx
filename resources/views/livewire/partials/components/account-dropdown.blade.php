@@ -57,14 +57,14 @@
                 </div>
             </div>
 
-            <!-- other links temaplte -->
+            <!-- other links template -->            
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
                 <a class="flex space-x-2 items-center">
                     <i class="fas fa-link"></i>
-                    <label class="capitalize">{{ __('link') }} </label>
+                    <label class="capitalize">{{ __('links template') }} </label>
                 </a>
                 
                 {{-- <div>
@@ -74,14 +74,13 @@
                     </button>
                 </div> --}}
             </div>
-
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
                 <a class="flex space-x-2 items-center">
                     <i class="fas fa-link"></i>
-                    <label class="capitalize">{{ __('link') }} </label>
+                    <label class="capitalize">{{ __('links template') }} </label>
                 </a>
                 
                 {{-- <div>
@@ -91,14 +90,13 @@
                     </button>
                 </div> --}}
             </div>
-
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
 
                 <a class="flex space-x-2 items-center">
                     <i class="fas fa-link"></i>
-                    <label class="capitalize">{{ __('link') }} </label>
+                    <label class="capitalize">{{ __('links template') }} </label>
                 </a>
                 
                 {{-- <div>
@@ -108,22 +106,39 @@
                     </button>
                 </div> --}}
             </div>
-            <!-- end other links temaplte -->
-
             <div class="flex flex-row w-full h-10 px-5 items-center justify-between text-sm
+                hover:bg-indigo-400 text-gray-500 hover:text-white
+                dark:hover:bg-gray-300 dark:hover:text-gray-600"> 
+
+                <a class="flex space-x-2 items-center">
+                    <i class="fas fa-link"></i>
+                    <label class="capitalize">{{ __('links template') }} </label>
+                </a>
+                
+                {{-- <div>
+                    <button 
+                        wire:click="toggleDark"
+                        class="bg-gray-500 w-full h-full rounded-full">adasd
+                    </button>
+                </div> --}}
+            </div>
+            <!-- end other links template -->
+
+            <div class="flex flex-row w-full h-10 px-5 items-center text-sm
                 hover:bg-indigo-400 text-gray-500 hover:text-white
                 dark:hover:bg-gray-300 dark:hover:text-gray-600
                 border-t border-gray-300 dark:border-gray-600 "> 
 
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logout') }}" class="w-full h-full">
                     @csrf
 
                     <button 
                         type="submit" 
-                        class="items-center justify-center text-sm w-full h-full" 
+                        class="w-full h-full text-sm space-x-2 flex flex-row justify-start items-center" 
                         alt="{{ __('Logout')}}">
                         
-                        <i class="fas fa-door-open"></i> {{ __('Logout')}}
+                        <i class="fas fa-door-open"></i> 
+                        <span>{{ __('Logout')}}</span>
                     </button>
                 </form>
             </div>
@@ -136,7 +151,6 @@
 
 <script>
     const checkbox = document.querySelector('#toggleDark');
-    const html = document.querySelector('html');
 
     const toggleDarkMode = () => {
         Livewire.emit('toggled')
