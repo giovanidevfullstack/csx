@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
         $this->createAdminUser(); 
 
         if (config('app.env') === 'local' || config('app.env') === 'testing'){
-            $this->setupInitialData(100);
+            $this->setupInitialData(env('SEEDER_LIMIT', 10));
         }    
     }
 
