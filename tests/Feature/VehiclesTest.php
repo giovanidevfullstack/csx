@@ -17,13 +17,8 @@ class VehiclesTest extends TestCase
         parent::setUp();
         Artisan::call('db:seed');
     }
-
-    /**
-     * Can see dashboard vehicles
-     *
-     * @test
-     */
-    public function can_see_dashboard_vehicles()
+    
+    public function test_can_see_dashboard_vehicles()
     {
         $user = User::factory()->create();
 
