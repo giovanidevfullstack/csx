@@ -8,7 +8,7 @@
 
     <!-- content -->
     <div class="w-full h-full flex items-center">
-        <div class="w-10/12 h-4/6 mx-auto">
+        <div class="w-10/12 h-auto mx-auto">
             <canvas id="myChart"></canvas>
         </div>
     </div>
