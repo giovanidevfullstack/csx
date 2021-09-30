@@ -106,4 +106,28 @@ class DashboardTest extends TestCase
 
         Livewire::actingAs($user)->test(MainNav::class)->assertSeeHtml($html);
     }
+
+    /** 
+     * If the graph was rendered
+     * 
+     * @test 
+     *  */
+    function assert_dashboard_contains_graph_component()
+    {
+        $user = User::factory()->create();
+        
+        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.dash-graph');
+    }
+
+    /** 
+     * If the graph was rendered
+     * 
+     * @test 
+     *  */
+    function assert_dashboard_contains_card_status_component()
+    {
+        $user = User::factory()->create();
+        
+        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.card-status');
+    }
 }
