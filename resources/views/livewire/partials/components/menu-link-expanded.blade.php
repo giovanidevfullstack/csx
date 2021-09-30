@@ -1,7 +1,7 @@
 <div>
     <div class="ml-2">
         <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
-            class="py-2 m-1 flex justify-between text-sm rounded-md
+            class="py-2 m-1 flex justify-between text-sm
             text-gray-500 border-l-2 border-gray-200
             hover:text-indigo-400 hover:border-indigo-400
             dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 
