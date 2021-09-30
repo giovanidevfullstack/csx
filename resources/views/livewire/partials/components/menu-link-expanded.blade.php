@@ -7,10 +7,14 @@
             dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 
             {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400 border-indigo-400' : ''}}">
 
-            <div class="flex items-center pl-3">
-                <i class="fas {{ $menu->icon }}"></i>
+            <div class="flex items-center pl-3 w-full">
+                <div class="mr-3 w-5">
+                    <i class="fas {{ $menu->icon }}"></i>
+                </div>
 
-                <span class="pl-4">{{$menu->name}}</span>
+                <div class="w-auto">
+                    <span class="">{{$menu->name}}</span>
+                </div>
             </div>
 
             <div class="flex items-center">
