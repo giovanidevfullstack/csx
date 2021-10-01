@@ -12,25 +12,24 @@
             bg-white shadow-r-3-xl" style="border-radius: 50% 5%/ 28% 5%">
 
             <div class="w-10/12 h-auto mx-auto">
-                <h1 class="antialiased font-light text-center uppercase text-indigo-400 text-7xl mb-5">CSX</h1>
+                <h1 class="antialiased font-light text-center uppercase text-indigo-400 text-7xl mb-5">{{ config('app.slug') }}</h1>
 
                 <form method="POST" action="{{ route('login.attempt') }}">
                     @csrf
                     
                     <!-- Email Address -->
                     <div>
-                        <span
-                            class="flex flex-row items-center mt-1 p-1 w-full h-10 rounded-lg
-                            text-sm text-indigo-400  border border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-600">
+                        <div class="relative flex items-center justify-end mt-1 text-sm text-indigo-400">
                             <input id="email" 
                                     type="email" 
                                     name="email" 
                                     :value="old('email')" 
                                     required autofocus 
                                     placeholder="Email"
-                                    class="px-3 py-2 border-none outline-none w-full h-full placeholder-current"/>
-                            <i class="fas fa-envelope m-2"></i>
-                        </span>
+                                    class="p-1 w-full h-10 rounded-lg px-3 py-2 placeholder-current
+                                    border border-indigo-400 outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600"/>
+                            <i class="fas fa-envelope absolute m-3"></i>
+                        </div>
                         
                         @error('email')
                             <span class="text-red-400 text-sm text-light" role="alert">
@@ -41,16 +40,16 @@
 
                     <!-- Password -->
                     <div class="mt-4" x-data="{ show : true }">
-                        <div class="flex flex-row items-center mt-1 p-1 w-full h-10 rounded-lg
-                            text-sm text-indigo-400 border border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-600">
+                        <div class="relative flex items-center justify-end mt-1 text-sm text-indigo-400">
                             <input id="password"
                                     :type="show ? 'password' : 'text'"
                                     name="password"
                                     required autocomplete="current-password" 
                                     placeholder="Senha"
-                                    class="px-3 py-2 border-none outline-none w-full h-full placeholder-current"/>
-                            <i class="fas fa-eye m-2" @click="show = !show" x-show="show"></i>
-                            <i class="fas fa-eye-slash m-2" @click="show = !show" x-show="!show"></i>
+                                    class="p-1 w-full h-10 rounded-lg px-3 py-2 placeholder-current
+                                    border border-indigo-400 outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600"/>
+                            <i class="fas fa-eye m-2 absolute" @click="show = !show" x-show="show"></i>
+                            <i class="fas fa-eye-slash m-2 absolute" @click="show = !show" x-show="!show"></i>
                         </div>
                     </div>
 
