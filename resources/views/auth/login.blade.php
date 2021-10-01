@@ -57,10 +57,12 @@
                     <!-- Remember Me -->
                     <div class="block mt-4 text-center">
                         <label for="remember_me" class="inline-flex items-center">
-                            <input id="remember_me" type="checkbox" 
-                                class="rounded border-gray-300 text-indigo-600 shadow-sm 
-                                focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                            <span class="ml-3 text-sm text-indigo-400">{{ __('Remember me') }}</span>
+                            <input id="remember_me" 
+                                    type="checkbox" 
+                                    name="remember"
+                                    class="rounded border-gray-300 text-indigo-400 focus:ring-indigo-400">
+
+                            <span class="ml-3 text-sm text-indigo-400">{{ __('Permanecer logado') }}</span>
                         </label>
                     </div>
 
@@ -75,7 +77,7 @@
                             hover:bg-indigo-800 hover:text-indigo-400 
                             focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50
                             dark:bg-indigo-900 dark:text-indigo-400">
-                            {{ __('Log in') }}
+                            {{ __('Entrar') }}
                         </button>
                     </div>
                 </form>
