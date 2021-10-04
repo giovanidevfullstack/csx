@@ -10,7 +10,8 @@ use App\Models\{
     VehicleDocument,
     Type,
     Store,
-    Address
+    Address,
+    Plan
 };
 
 class UserSeeder extends Seeder
@@ -46,8 +47,9 @@ class UserSeeder extends Seeder
     private function setupInitialData(int $limit)
     {
         $types = Type::factory()->count(3)->create();
-
-        User::factory()->count($limit)->create()->each(function ($user) use ($types) {
+        $plans = Plan::factory()->count(5)->create();
+        
+        User::factory()->count($limit)->create()->each(function ($user) use ($types, $plans) {
             $store = Store::factory()->count(1)->create()->each(function($store) use ($types) {
                 $store->address()->save(Address::factory()->create());
                 
@@ -58,6 +60,7 @@ class UserSeeder extends Seeder
             });
 
             $user->address()->save(Address::factory()->create());
+            $user->plan()->associate($plans[array_rand($plans->pluck('id')->toArray(), 1)])->save();
         });      
     }
 }

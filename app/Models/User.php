@@ -10,7 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
     Store,
-    Address
+    Address,
+    Plan
 };
 
 class User extends Authenticatable
@@ -55,5 +56,10 @@ class User extends Authenticatable
     public function address()
     {
         return $this->morphOne(Address::class, 'addressable');
+    }
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
     }
 }
