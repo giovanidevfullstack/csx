@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFkStoreIdAddressTable extends Migration
+class AddFkUserStore extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddFkStoreIdAddressTable extends Migration
      */
     public function up()
     {
-        Schema::table('addresses', function (Blueprint $table) {
-            $table->foreignId('store_id')
+        Schema::table('stores', function (Blueprint $table) {
+            $table->foreignId('user_id')
                 ->after('id')
                 ->nullable()
                 ->constrained();
@@ -28,8 +28,8 @@ class AddFkStoreIdAddressTable extends Migration
      */
     public function down()
     {
-        Schema::table('addresses', function (Blueprint $table) {
-            $table->dropColumn('store_id');
+        Schema::table('stores', function (Blueprint $table) {
+            $table->dropColumn('user_id');
         });
     }
 }

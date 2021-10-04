@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
     User,
+    Vehicles,
     Address
 };
 
@@ -28,11 +29,16 @@ class Store extends Model
 
     public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
+    }
+    
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class);
     }
 
     public function address()
     {
-        return $this->hasOne(Address::class);
+        return $this->morphOne(Address::class, 'addressable');
     }
 }

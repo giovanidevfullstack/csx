@@ -16,12 +16,19 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('model');
-            $table->string('price', 8)->default('0,00');
-            $table->string('assembler')->nullable();
+            $table->integer('price')->nullable();
+            $table->string('factory')->nullable();
             $table->date('year')->nullable();
-            $table->json('setup')->nullable();
+            $table->json('details')->nullable();
+            $table->string('doc_number')->nullable();
+            $table->string('doc_type')->nullable();   
+            $table->date('doc_date')->nullable();         
             $table->boolean('is_new')->nullable();
             $table->boolean('has_financing')->nullable();
+            $table->boolean('is_sold')->nullable();
+            $table->boolean('is_visible')->nullable();
+            $table->boolean('is_annual_tax_paid')->nullable();
+            $table->boolean('has_crash')->nullable();    
             $table->timestamps();
             $table->softDeletes();
         });

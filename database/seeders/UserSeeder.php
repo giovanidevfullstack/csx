@@ -46,28 +46,18 @@ class UserSeeder extends Seeder
     private function setupInitialData(int $limit)
     {
         $types = Type::factory()->count(3)->create();
-        
+
         User::factory()->count($limit)->create()->each(function ($user) use ($types) {
-            Vehicle::factory()->count(rand(1,2))->create([
-                'user_id' => $user->id,
-                'type_id' => $types[array_rand($types->pluck('id')->toArray(), 1)]->id
-            ])->each(function ($vehicle) {
-                VehicleDocument::factory()->count(2)->create([
-                    'vehicle_id' => $vehicle->id
+            $store = Store::factory()->count(1)->create()->each(function($store) use ($types) {
+                $store->address()->save(Address::factory()->create());
+                
+                Vehicle::factory()->count(rand(1,10))->create([
+                    'store_id' => $store->id,
+                    'type_id' => $types[array_rand($types->pluck('id')->toArray(), 1)]->id
                 ]);
             });
 
-            $store = Store::factory()->count(1)->create()->each(function($store) {
-                Address::factory()->create([
-                    'store_id' => $store->id
-                ]);
-            });
-            $user->store()->associate($store->pluck('id')[0]);
-            $user->save();
-
-            Address::factory()->create([
-                'user_id' => $user->id
-            ]);
+            $user->address()->save(Address::factory()->create());
         });      
     }
 }

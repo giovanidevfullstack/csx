@@ -34,7 +34,6 @@ class UserFactory extends Factory
             'gender' => ['m', 'f'][array_rand(['m', 'f'], 1)],
             'is_admin' => 0,
             'is_seller' => rand(0,1),
-            'is_employee' => rand(0,1),
             'remember_token' => Str::random(10)
         ];
     }

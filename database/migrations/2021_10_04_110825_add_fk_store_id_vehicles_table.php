@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFkUserIdVehiclesTable extends Migration
+class AddFkStoreIdVehiclesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddFkUserIdVehiclesTable extends Migration
     public function up()
     {
         Schema::table('vehicles', function (Blueprint $table) {
-            $table->foreignId('user_id')
+            $table->foreignId('store_id')
                 ->after('id')
                 ->nullable()
                 ->constrained();
@@ -29,7 +29,7 @@ class AddFkUserIdVehiclesTable extends Migration
     public function down()
     {
         Schema::table('vehicles', function (Blueprint $table) {
-            $table->dropColumn('user_id');
+            $table->dropColumn('store_id');
         });
     }
 }

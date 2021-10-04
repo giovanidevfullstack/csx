@@ -22,10 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone', 20)->nullable();
             $table->string('age', 3)->nullable();
-            $table->string('gender', 3)->nullable();
+            $table->string('gender', 2)->nullable();
             $table->boolean('is_admin')->nullable();
             $table->boolean('is_seller')->nullable();
-            $table->boolean('is_employee')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

@@ -28,13 +28,9 @@ class Address extends Model
         'note'
     ];
 
-    public function user()
+    public function addressable()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo();
     }
 
-    public function store()
-    {
-        return $this->belongsTo(Store::class);
-    }
 }

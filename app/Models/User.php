@@ -10,10 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
     Store,
-    UserDocument,
-    UserConfig,
-    Address,
-    Vehicle
+    Address
 };
 
 class User extends Authenticatable
@@ -52,27 +49,11 @@ class User extends Authenticatable
 
     public function store()
     {
-        return $this->belongsTo(Store::class);
+        return $this->hasOne(Store::class);
     }    
-
-    public function user_document()
-    {
-        return $this->hasOne(UserDocument::class);
-    }
-
-    public function user_config()
-    {
-        return $this->hasOne(UserConfig::class);
-    }
 
     public function address()
     {
-        return $this->hasOne(Address::class);
+        return $this->morphOne(Address::class, 'addressable');
     }
-
-    public function vehicles()
-    {
-        return $this->hasMany(Vehicle::class);
-    }
-    
 }

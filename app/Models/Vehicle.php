@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
-    User,
-    VehicleDocument,
-    VehicleImages,
+    Store,
     Type
 };
 
@@ -31,23 +29,13 @@ class Vehicle extends Model
         'has_financing'
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function vehicle_document()
-    {
-        return $this->hasOne(VehicleDocument::class);
-    }
-
-    public function vehicle_images()
-    {
-        return $this->hasMany(VehicleImages::class);
-    }
-
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
     }
 }
