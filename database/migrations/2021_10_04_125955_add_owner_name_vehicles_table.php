@@ -14,7 +14,7 @@ class AddOwnerNameVehiclesTable extends Migration
     public function up()
     {
         Schema::table('vehicles', function (Blueprint $table) {
-            $table->string('owner_name');
+            $table->string('owner_name')->nullable();
         });
     }
 

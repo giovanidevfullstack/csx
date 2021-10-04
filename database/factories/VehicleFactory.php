@@ -22,6 +22,7 @@ class VehicleFactory extends Factory
     public function definition()
     {
         return [
+            'owner_name' => $this->faker->name,
             'model' => $this->faker->word,
             'price' => $this->faker->randomNumber(rand(3, 6)), 
             'factory' => $this->faker->company,

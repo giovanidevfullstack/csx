@@ -21,6 +21,7 @@ class Vehicle extends Model
      * @var string[]
      */
     protected $fillable = [
+        'owner_name',
         'model',
         'price',
         'assembler',
