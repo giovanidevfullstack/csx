@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
     User,
     Vehicles,
-    Address
+    Address,
+    Image
 };
 
 class Store extends Model
@@ -40,5 +41,10 @@ class Store extends Model
     public function address()
     {
         return $this->morphOne(Address::class, 'addressable');
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

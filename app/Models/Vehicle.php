@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
     Store,
-    Type
+    Type,
+    Image
 };
 
 class Vehicle extends Model
@@ -37,5 +38,10 @@ class Vehicle extends Model
     public function store()
     {
         return $this->belongsTo(Store::class);
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

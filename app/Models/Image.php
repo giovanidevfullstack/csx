@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Address extends Model
+class Image extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,15 +15,10 @@ class Address extends Model
      * @var string[]
      */
     protected $fillable = [
-        'country',
-        'uf',
-        'city',
-        'street_name',
-        'street_number',
-        'note'
+        'path',
     ];
 
-    public function addressable()
+    public function imageable()
     {
         return $this->morphTo();
     }
