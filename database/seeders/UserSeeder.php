@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
             'name' => 'Giovani',
             'last_name' => 'Souza',
             'email' => 'admin@csx.com',
-            'password' => Hash::make('***csx***'),
+            'password' => Hash::make(env('ADMIN_PASSWORD')),
             'email_verified_at' => now(),
             'is_admin' => 1,
             'gender' => 'm',
