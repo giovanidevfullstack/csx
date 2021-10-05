@@ -6,9 +6,11 @@ use Tests\TestCase;
 use App\Models\Menu;
 use App\Models\User;
 use Livewire\Livewire;
+use App\Builders\CardBuilder;
 use Illuminate\Support\Collection;
 use App\Http\Livewire\Partials\MainNav;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Livewire\Partials\CardStatus;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -89,5 +91,17 @@ class DashboardTest extends TestCase
         $user = User::factory()->create();
         
         $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.card-status');
+    }
+
+    function test_assert_status_card_has_a_card()
+    {
+        $user = User::factory()->create();
+
+        $card =  (new CardBuilder)
+                ->setFlag('BRL')
+                ->total()
+                ->get();
+
+        Livewire::actingAs($user)->test(CardStatus::class, ['card' => $card[0]])->assertSet('card', $card[0]);
     }
 }
