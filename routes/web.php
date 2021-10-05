@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users\{
+    DashboardController,
+    VehiclesController
+};
 
 Route::get('/', function () {
     return view('landing.welcome');
@@ -12,13 +16,10 @@ Route::get('/', function () {
 
 //protected routes
 Route::middleware(['auth'])->group(function (){
-    Route::get('/store', function() {
-        return view('dashboard.store.index');
-    })->name('dashboard.store.index');
-
-    Route::get('/store/vehicles', function() {
-        return view('dashboard.vehicles.index');
-    })->name('dashboard.vehicles.index');
+    Route::prefix('store')->name('dashboard.')->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('store.index');
+        Route::get('/vehicles', [VehiclesController::class, 'index'])->name('vehicles.index');
+    });
 });
 
 //auth routes

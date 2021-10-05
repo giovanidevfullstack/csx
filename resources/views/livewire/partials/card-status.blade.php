@@ -5,7 +5,7 @@
                 
         <div class="flex flex-row justify-between text-gray-400 group-hover:text-white">
             <h1 class="uppercase">
-                {{ $data['title'] }}
+                {{ $card['title'] }}
             </h1>
 
             <button>
@@ -13,15 +13,17 @@
             </button>
         </div>
         
-        <div class="h-full flex flex-col justify-center text-center text-green-400 group-hover:text-white">
-            <h1 class="text-3xl ">{{ $data['value'] }}</h1>
-            <label class="text-md">
-                (+ {{ $data['percent'] }}%
+        <div class="h-full flex flex-col justify-center text-center group-hover:text-white
+            {{ $card['is_up'] ? 'text-green-400' : 'text-red-400' }}">
+            <h1 class="text-3xl ">{{ $card['value'] }}</h1>
 
-                <i class="fas fa-long-arrow-alt-up"></i>
+            @if(!empty($card['percent']))
+                <label class="text-md">
+                    {{ $card['percent'] }}%
 
-                )
-            </label>
+                    <i class="fas {{ $card['is_up'] ? 'fa-long-arrow-alt-up' : 'fa-long-arrow-alt-down' }}"></i>
+                </label>
+            @endif
         </div>
     </div>
 </div>

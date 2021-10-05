@@ -6,7 +6,12 @@ use Livewire\Component;
 
 class CardStatus extends Component
 {
-    public $data = [];
+    public $card = [];
+
+    public function mount($card)
+    {
+        $this->card = $card;
+    }
 
     public function render()
     {
