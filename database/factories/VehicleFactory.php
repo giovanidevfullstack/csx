@@ -24,7 +24,7 @@ class VehicleFactory extends Factory
         return [
             'owner_name' => $this->faker->name,
             'model' => $this->faker->word,
-            'price' => $this->faker->randomNumber(rand(3, 6)), 
+            'price' => $this->faker->numberBetween(1000000,6000000), 
             'factory' => $this->faker->company,
             'year' => $this->faker->date('Y-m-d'),
             'details' => null,

@@ -17,14 +17,14 @@ class CreateAddressesTable extends Migration
             $table->id();
             $table->string('addressable_type')->nullable();
             $table->integer('addressable_id')->nullable();
-            $table->string('country', 100)->nullable();
+            $table->string('country')->nullable();
             $table->string('uf', 3)->nullable();
-            $table->string('city', 100)->nullable();
+            $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->string('postcode', 15)->nullable();
             $table->string('street_name')->nullable();
             $table->string('street_number', 10)->nullable();
-            $table->string('note', 100)->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
