@@ -26,12 +26,6 @@ Route::middleware(['auth'])->group(function (){
 
     Route::prefix('admin')->name('dashboard.admin.')->group(function () {
         Route::get('/', [MenuController::class, 'index'])->name('menus.index');
-        //create
-        //list
-        //delete
-        //edit
-        //update
-        //future -> resource
     });
 });
 
