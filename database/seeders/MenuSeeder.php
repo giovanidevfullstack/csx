@@ -55,6 +55,12 @@ class MenuSeeder extends Seeder
             'title' => 'Administração',
             'links' => [
                 [
+                    'name' => 'Menus',
+                    'icon' => 'fa-bars',
+                    'route' => 'dashboard.admin.menus.index', 
+                    'is_admin' => 1
+                ],
+                [
                     'name' => 'Log',
                     'icon' => 'fa-server',
                     'route' => null, 
