@@ -21,7 +21,8 @@
                         type="submit" 
                         class="w-full h-10 text-md mx-auto
                             text-blue-700 hover:bg-blue-700 hover:text-white" 
-                        alt="{{ __('edit')}}">
+                        alt="{{ __('edit')}}"
+                        wire:click="editMenu({{ $menu->id }})">
                         
                         <i class="fas fa-pencil-alt"></i> 
                     </button>
@@ -46,9 +47,6 @@
         @endif
     </div>
 
-    <!-- crud -->
-    <div class="bg-pink-400 flex flex-col mx-auto w-full h-4/6 p-5">
-        <h1>Edita os detalhes do menu selecionado </h1>
-        <h1>Edit</h1>
-    </div>
+    <!-- crud component -->
+    @livewire('admin.menus.menu-crud')
 </div>

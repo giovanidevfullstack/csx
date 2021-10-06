@@ -16,6 +16,11 @@ class MenuConfig extends Component
         $this->menu = $menu;
     }
 
+    public function editMenu(Menu $menu)
+    {
+        $this->emit('editMenu', $menu);
+    }
+
     public function render()
     {
         return view('livewire.admin.menus.menu-config');

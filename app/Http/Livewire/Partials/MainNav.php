@@ -7,6 +7,8 @@ use App\Models\Menu;
 
 class MainNav extends Component
 {   
+    // protected $listeners = [ 'menuUpdated' => 'render' ];
+    
     public $globalMenus = [];
 
     public $adminMenus = [];
@@ -15,8 +17,13 @@ class MainNav extends Component
     {
         $this->globalMenus = Menu::where('is_admin', '!=', 1)
                                 ->orWhereNull('is_admin')
+                                ->orWhere('is_admin', false)
+                                ->orderBy('id')
                                 ->get();
-        $this->adminMenus = Menu::where(['is_admin' => 1])->get();
+
+        $this->adminMenus = Menu::where(['is_admin' => 1])
+                                ->orderBy('id')
+                                ->get();
         return view('livewire.partials.main-nav');
     }
 }
