@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function (){
         Route::get('/vehicles', [VehiclesController::class, 'index'])->name('vehicles.index');
     });
 
-    Route::prefix('admin')->name('dashboard.admin.')->group(function () {
+    Route::middleware(['isAdmin'])->prefix('admin')->name('dashboard.admin.')->group(function () {
         Route::get('/', [MenuController::class, 'index'])->name('menus.index');
     });
 });

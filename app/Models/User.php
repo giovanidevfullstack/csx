@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Plan::class);
     }
+
+    public function admin()
+    {
+        return $this->is_admin;
+    }
 }
