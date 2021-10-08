@@ -119,4 +119,13 @@ class MenuManagementTest extends TestCase
             ->assertEmitted('menuDeleted')
             ->assertStatus(200);
     }
+
+    public function test_assert_user_cant_see_menu_management()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get(route('dashboard.admin.menus.index'));
+
+        $response->assertStatus(403);
+    }
 }
