@@ -21,6 +21,24 @@ class Menu extends Model
         'icon',
         'route',
         'new_msgs',
-        'is_admin'
+        'is_admin',
+        'is_active'
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
+
+    public function scopeUser($query)
+    {
+        return $query->where('is_admin', '!=', 1)
+                        ->orWhereNull('is_admin')
+                        ->orWhere('is_admin', false);
+    }
+
+    public function scopeAdmin($query)
+    {
+        return $query->where('is_admin', 1);
+    }
 }

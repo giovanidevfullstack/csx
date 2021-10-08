@@ -21,6 +21,20 @@ class MenuConfig extends Component
         $this->emit('editMenu', $menu);
     }
 
+    public function removeMenu(Menu $menu)
+    {
+        $menu->delete();
+        $this->emit('menuDeleted');
+        $this->resetMenu();
+    }
+
+    public function resetMenu()
+    {
+        if(!empty($this->menu)){
+            $this->reset('menu');
+        }
+    }
+    
     public function render()
     {
         return view('livewire.admin.menus.menu-config');

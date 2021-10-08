@@ -7,7 +7,7 @@
         dark:bg-gray-900 dark:text-white">
         
         <!-- list component -->
-        @livewire('admin.menus.menu-list', ['allMenus' => $allMenus])
+        @livewire('admin.menus.menu-list')
 
         <!-- config component -->
         @livewire('admin.menus.menu-config')

@@ -10,7 +10,8 @@ class MenuCrud extends Component
 {
     protected $listeners = [
         'editMenu' => 'selectedMenu',
-        'menuSelected' => 'resetMenu'
+        'menuSelected' => 'resetMenu',
+        'menuDeleted' => 'resetMenu'
     ];
 
     public $menu;
@@ -19,7 +20,7 @@ class MenuCrud extends Component
         'menu.name' => 'required|min:3',
         'menu.is_admin' => 'nullable',
         'menu.icon' => 'required|min:5|max:30',
-        'menu.route' => 'required|min:1|max:30'
+        'menu.route' => 'nullable|min:1|max:30'
     ];
 
     public function selectedMenu(Menu $menu)
@@ -27,11 +28,12 @@ class MenuCrud extends Component
         $this->menu = $menu->toArray();
     }
 
-    public function save()
+    public function update()
     {
         $this->validate();
 
         $this->menu['is_admin'] = (is_null($this->menu['is_admin'])) || (!($this->menu['is_admin'])) ? false : true;
+        $this->menu['title'] = (is_null($this->menu['is_admin'])) || (!($this->menu['is_admin'])) ? 'Loja' : 'Administração';
 
         if(Menu::find($this->menu['id'])->update($this->menu)){
             $this->emit('menuUpdated');

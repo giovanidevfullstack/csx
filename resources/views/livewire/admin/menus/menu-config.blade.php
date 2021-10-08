@@ -29,16 +29,9 @@
                     <button 
                         type="submit" 
                         class="w-full h-10 text-md mx-auto
-                            text-gray-700 hover:bg-gray-700 hover:text-white" 
-                        alt="{{ __('disable')}}">
-                        
-                        <i class="fas fa-eye-slash"></i> 
-                    </button>
-                    <button 
-                        type="submit" 
-                        class="w-full h-10 text-md mx-auto
                             text-red-700 hover:bg-red-700 hover:text-white" 
-                        alt="{{ __('delete')}}">
+                        alt="{{ __('delete')}}"
+                        wire:click="removeMenu({{ $menu->id }})">
                         
                         <i class="fas fa-trash-alt"></i> 
                     </button>

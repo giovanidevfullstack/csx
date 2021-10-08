@@ -12,7 +12,6 @@ class MenuController extends Controller
     public function index() : View
     {
         // abort_if(Gate::denies('user_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $allMenus = Menu::all();
-        return view('dashboard.admin.menus.index', compact('allMenus'));
+        return view('dashboard.admin.menus.index');
     }
 }
