@@ -54,11 +54,20 @@
             hover:text-indigo-400 hover:border-indigo-400
             dark:border-gray-900 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700"
             wire:click="openMenu({{ $menu->id }})">
-                
-            <div>{{ $menu->name }}</div>
+            
+            <div class="flex flex-row justify-between w-full">
+                <div>{{ $menu->name }}</div>
 
-                <!-- if is active -->
-                <div class="{{ $menu->is_active ? 'bg-green-400' : 'bg-red-400' }} w-2 h-2 rounded-full"></div>
+                <div class="flex items-center space-x-4">
+                    @if($menu->is_admin)
+                        <i class="fas fa-lock"></i> 
+                    @else
+                        <i class="fas fa-user"></i>
+                    @endif
+
+                    <div class="{{ $menu->is_active ? 'bg-green-400' : 'bg-red-400' }} w-2 h-2 rounded-full"></div>
+                </div>
+            </div>
             </button>
         @endforeach
     </div>
