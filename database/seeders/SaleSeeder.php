@@ -15,7 +15,7 @@ class SaleSeeder extends Seeder
      */
     public function run()
     {
-        Sale::factory()->count(env('SEEDER_LIMIT', 10))->create([
+        Sale::factory()->count(10)->create([
             'vehicle_id' => (new Faker)->numberBetween(1, env('SEEDER_LIMIT', 10)),
         ]);
     }
