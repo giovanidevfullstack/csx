@@ -48,16 +48,20 @@ class DashboardTest extends TestCase
     }
 
     function test_assert_main_nav_contains_menus_list()
-    {
+    {   
+        $user = User::factory()->create();
         $globalMenus = Menu::where('is_admin', '!=', 1)
                                 ->orWhereNull('is_admin')
                                 ->get();
         
-        Livewire::test(MainNav::class)->assertSet('globalMenus', $globalMenus);
+        Livewire::actingAs($user)->test(MainNav::class)->assertSet('globalMenus', $globalMenus);
 
+        $admin = $user = User::factory()->create([
+            'is_admin' => 1
+        ]);
         $adminMenus = Menu::where(['is_admin' => 1])->get();
 
-        Livewire::test(MainNav::class)->assertSet('adminMenus', $adminMenus);
+        Livewire::actingAs($admin)->test(MainNav::class)->assertSet('adminMenus', $adminMenus);
     }
 
     function test_assert_user_cant_see_adm_menu()

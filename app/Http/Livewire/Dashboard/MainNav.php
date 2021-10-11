@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Dashboard;
 
-use Livewire\Component;
 use App\Models\Menu;
+use Livewire\Component;
+use Illuminate\Support\Facades\Gate;
 
 class MainNav extends Component
 {   
@@ -18,18 +19,30 @@ class MainNav extends Component
 
     public function render()
     {
-        $this->globalMenus = Menu::active()
+        $this->globalMenus = $this->getGlobalMenus();
+
+        if (Gate::allows('only-admin')) {
+            $this->adminMenus = $this->getAdminMenus();
+        }
+
+        return view('livewire.dashboard.main-nav');
+    }
+
+    private function getGlobalMenus()
+    {
+        return Menu::active()
             ->user()
             ->orderBy('id', 'asc')
             ->orderBy('created_at', 'asc')
             ->get();
+    }
 
-        $this->adminMenus = Menu::active()
+    private function getAdminMenus()
+    {
+        return Menu::active()
             ->admin()
             ->orderBy('id')
             ->orderBy('created_at', 'asc')
             ->get();
-
-        return view('livewire.dashboard.main-nav');
     }
 }
