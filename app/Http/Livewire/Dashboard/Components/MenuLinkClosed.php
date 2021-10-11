@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Partials\Components;
+namespace App\Http\Livewire\Dashboard\Components;
 
 use Livewire\Component;
 
@@ -10,6 +10,6 @@ class MenuLinkClosed extends Component
     
     public function render()
     {
-        return view('livewire.partials.components.menu-link-closed');
+        return view('livewire.dashboard.components.menu-link-closed');
     }
 }

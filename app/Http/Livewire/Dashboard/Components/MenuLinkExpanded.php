@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Partials\Components;
+namespace App\Http\Livewire\Dashboard\Components;
 
 use Livewire\Component;
 
@@ -10,6 +10,6 @@ class MenuLinkExpanded extends Component
 
     public function render()
     {   
-        return view('livewire.partials.components.menu-link-expanded');
+        return view('livewire.dashboard.components.menu-link-expanded');
     }
 }

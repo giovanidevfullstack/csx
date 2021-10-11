@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Partials\Components;
+namespace App\Http\Livewire\Dashboard\Components;
 
 use Livewire\Component;
 use Illuminate\Http\Request;
@@ -17,11 +17,6 @@ class AccountDropdown extends Component
         $this->route = Route::currentRouteName();
     }
 
-    public function render()
-    {
-        return view('livewire.partials.components.account-dropdown');
-    }
-
     public function toggleDark(Request $request)
     {
         $isDark = $request->session()->get('isDark') ?? false;
@@ -29,5 +24,10 @@ class AccountDropdown extends Component
         $request->session()->put('isDark', !$isDark);
 
         return redirect()->to(route($this->route));
+    }
+
+    public function render()
+    {
+        return view('livewire.dashboard.components.account-dropdown');
     }
 }

@@ -9,7 +9,7 @@
                 
     
             <!-- Account -->
-            @livewire('partials.components.account-dropdown')
+            @livewire('dashboard.components.account-dropdown')
             
             <!-- Menus -->
             <div class="w-full h-full border-b border-gray-300 dark:border-gray-700 overflow-y-auto overflow-x-hidden">
@@ -22,10 +22,10 @@
                     @endif
                     
                     <div x-show="open">
-                        @livewire('partials.components.menu-link-expanded', ['menu' => $menu])
+                        @livewire('dashboard.components.menu-link-expanded', ['menu' => $menu])
                     </div>
                     <div x-show="!open">
-                        @livewire('partials.components.menu-link-closed', ['menu' => $menu])
+                        @livewire('dashboard.components.menu-link-closed', ['menu' => $menu])
                     </div>
                 @endforeach
 
@@ -38,10 +38,10 @@
                         @endif
                         
                         <div x-show="open">
-                            @livewire('partials.components.menu-link-expanded', ['menu' => $menu])
+                            @livewire('dashboard.components.menu-link-expanded', ['menu' => $menu])
                         </div>
                         <div x-show="!open">
-                            @livewire('partials.components.menu-link-closed', ['menu' => $menu])
+                            @livewire('dashboard.components.menu-link-closed', ['menu' => $menu])
                         </div>
                     @endforeach
                 @endcan

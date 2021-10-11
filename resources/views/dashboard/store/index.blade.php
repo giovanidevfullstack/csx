@@ -11,7 +11,7 @@
             dark:bg-gray-800 dark:border-gray-600">
 
             @foreach ($cards as $card)
-                @livewire('partials.card-status', ['card' => $card]) 
+                @livewire('dashboard.card-status', ['card' => $card]) 
             @endforeach            
         </div>
 
@@ -20,7 +20,7 @@
             bg-gray-300 dark:bg-gray-900">
             
             <!-- graph -->
-            @livewire('partials.dash-graph')
+            @livewire('dashboard.dash-graph')
         </div>
     </div>
     

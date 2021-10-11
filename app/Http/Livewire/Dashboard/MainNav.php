@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Partials;
+namespace App\Http\Livewire\Dashboard;
 
 use Livewire\Component;
 use App\Models\Menu;
@@ -34,6 +34,6 @@ class MainNav extends Component
 
         // dd($this->adminMenus);
 
-        return view('livewire.partials.main-nav');
+        return view('livewire.dashboard.main-nav');
     }
 }

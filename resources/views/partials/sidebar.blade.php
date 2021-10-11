@@ -1,1 +1,1 @@
-@livewire('partials.main-nav')
+@livewire('dashboard.main-nav')

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Partials;
+namespace App\Http\Livewire\Dashboard;
 
 use Livewire\Component;
 
@@ -62,6 +62,6 @@ class DashGraph extends Component
 
     public function render()
     {
-        return view('livewire.partials.dash-graph');
+        return view('livewire.dashboard.dash-graph');
     }
 }

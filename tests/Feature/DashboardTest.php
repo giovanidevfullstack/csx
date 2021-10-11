@@ -8,9 +8,9 @@ use App\Models\User;
 use Livewire\Livewire;
 use App\Builders\CardBuilder;
 use Illuminate\Support\Collection;
-use App\Http\Livewire\Partials\MainNav;
+use App\Http\Livewire\dashboard\MainNav;
 use Illuminate\Support\Facades\Artisan;
-use App\Http\Livewire\Partials\CardStatus;
+use App\Http\Livewire\dashboard\CardStatus;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -44,7 +44,7 @@ class DashboardTest extends TestCase
     {
         $user = User::factory()->create();
         
-        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.main-nav');
+        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('dashboard.main-nav');
     }
 
     function test_assert_main_nav_contains_menus_list()
@@ -83,14 +83,14 @@ class DashboardTest extends TestCase
     {
         $user = User::factory()->create();
         
-        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.dash-graph');
+        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('dashboard.dash-graph');
     }
 
     function test_assert_dashboard_contains_card_status_component()
     {
         $user = User::factory()->create();
         
-        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('partials.card-status');
+        $this->actingAs($user)->get(route('dashboard.store.index'))->assertSeeLivewire('dashboard.card-status');
     }
 
     function test_assert_status_card_has_a_card()

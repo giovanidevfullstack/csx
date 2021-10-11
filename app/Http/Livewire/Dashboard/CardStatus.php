@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Partials;
+namespace App\Http\Livewire\Dashboard;
 
 use Livewire\Component;
 
@@ -10,6 +10,6 @@ class CardStatus extends Component
 
     public function render()
     {   
-        return view('livewire.partials.card-status');
+        return view('livewire.dashboard.card-status');
     }
 }
