@@ -25,7 +25,7 @@
                 <input wire:model.defer="menuName" 
                         type="text" 
                         class="p-1 w-full h-8 rounded-lg px-3 py-2 placeholder-current
-                        border border-indigo-400 outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600">
+                        border border-indigo-400 outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:bg-gray-900">
                 @error('menuName') <span class="text-red-400 text-sm">{{ $message }}</span> @enderror
                 
                 <div class="mx-auto pt-2 w-full">
