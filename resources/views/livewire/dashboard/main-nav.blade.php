@@ -22,10 +22,53 @@
                     @endif
                     
                     <div x-show="open">
-                        @livewire('dashboard.components.menu-link-expanded', ['menu' => $menu])
+                        <!-- <menu-link open:false/>-->
+                        <div class="ml-2">
+                            <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
+                                class="py-2 m-1 flex justify-between text-sm
+                                text-gray-500 border-l-2 border-gray-200
+                                hover:text-indigo-400 hover:border-indigo-400
+                                dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 
+                                {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400 border-indigo-400' : ''}}">
+                    
+                                <div class="flex items-center pl-3 w-full">
+                                    <div class="mr-3 w-5">
+                                        <i class="fas {{ $menu->icon }}"></i>
+                                    </div>
+                    
+                                    <div class="w-auto">
+                                        <span class="">{{$menu->name}}</span>
+                                    </div>
+                                </div>
+                    
+                                <div class="flex items-center">
+                                    @if (!empty($menu->new_msgs))
+                                        <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center
+                                            dark:bg-gray-600">
+                                            {{ $menu->new_msgs }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <div x-show="!open">
-                        @livewire('dashboard.components.menu-link-closed', ['menu' => $menu])
+                        <!-- <menu-link open:true/>-->
+                        <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
+                            class="w-full h-10 flex justify-center items-center text-md
+                            text-gray-500 dark:text-gray-700 
+                            hover:text-indigo-400 dark:hover:text-gray-300
+                            {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400' : ''}}">
+                    
+                            <i class="fas {{ $menu->icon }}"></i>
+                    
+                            @if (!empty($menu->new_msgs))
+                                <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light
+                                    dark:bg-gray-600">
+                                    {{ $menu->new_msgs }}
+                                </span>
+                            @endif
+                        </a>
                     </div>
                 @endforeach
 
@@ -38,10 +81,51 @@
                         @endif
                         
                         <div x-show="open">
-                            @livewire('dashboard.components.menu-link-expanded', ['menu' => $menu])
+                            <div class="ml-2">
+                                <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
+                                    class="py-2 m-1 flex justify-between text-sm
+                                    text-gray-500 border-l-2 border-gray-200
+                                    hover:text-indigo-400 hover:border-indigo-400
+                                    dark:border-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300 dark:text-gray-700 
+                                    {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400 border-indigo-400' : ''}}">
+                        
+                                    <div class="flex items-center pl-3 w-full">
+                                        <div class="mr-3 w-5">
+                                            <i class="fas {{ $menu->icon }}"></i>
+                                        </div>
+                        
+                                        <div class="w-auto">
+                                            <span class="">{{$menu->name}}</span>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="flex items-center">
+                                        @if (!empty($menu->new_msgs))
+                                            <span class="bg-red-400 text-white text-xs font-light rounded-full w-4 h-4 block text-center items-center
+                                                dark:bg-gray-600">
+                                                {{ $menu->new_msgs }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div x-show="!open">
-                            @livewire('dashboard.components.menu-link-closed', ['menu' => $menu])
+                            <a href="{{ is_null($menu->route) ?  '#' : route($menu->route) }}" 
+                                class="w-full h-10 flex justify-center items-center text-md
+                                text-gray-500 dark:text-gray-700 
+                                hover:text-indigo-400 dark:hover:text-gray-300
+                                {{ (Route::current()->getName() == $menu->route) ? 'text-indigo-400' : ''}}">
+                        
+                                <i class="fas {{ $menu->icon }}"></i>
+                        
+                                @if (!empty($menu->new_msgs))
+                                    <span class="bg-red-400 absolute w-4 h-4 ml-5 mb-5 items-center rounded-full text-center text-white text-xs font-light
+                                        dark:bg-gray-600">
+                                        {{ $menu->new_msgs }}
+                                    </span>
+                                @endif
+                            </a>                            
                         </div>
                     @endforeach
                 @endcan
