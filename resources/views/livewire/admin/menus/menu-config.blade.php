@@ -1,14 +1,16 @@
 <div class="w-full h-screen">
 
     <!-- details -->
-    <div class="flex flex-col mx-auto w-full h-2/6 p-5 border-b border-gray-300">
+    <div class="flex flex-col mx-auto w-full h-2/6 p-5 border-b border-gray-300
+        dark:border-gray-700">
+
         @if(isset($menu))
             <div class="h-8 text-gray-500">
-                <h1 class="uppercase text-gray-600 text-lg">{{ $menu->name ?? '' }}</h1>
+                <h1 class="uppercase text-gray-600 dark:text-gray-400 text-lg">{{ $menu->name ?? '' }}</h1>
             </div>
 
             <div class="flex flex-row h-full">
-                <div class="flex flex-col w-11/12 text-gray-600 space-y-2 justify-center">
+                <div class="flex flex-col w-11/12 text-gray-600 dark:text-gray-400 space-y-2 justify-center">
                     <div>ID: {{ $menu->id ?? ''}}</div>
                     <div>Permissão: {{ $menu->is_admin ? 'admin' : 'user' }}</div>
                     <div>Título de grupo: {{ $menu->title ?? ''}}</div>
