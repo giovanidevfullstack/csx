@@ -19,22 +19,10 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl
 
 # Activate Apache rewrite
 RUN a2enmod rewrite
-
-# Get latest Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Get node and npm
-RUN command git clone https://github.com/nodejs/node.git \
-    && cd node \
-    && ./configure \
-    && make \
-    && sudo make install
-RUN echo node -v
-RUN echo npm -v
 
 # Config Apache
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
@@ -45,7 +33,3 @@ COPY . /var/www/html
 
 # Set Docker root
 WORKDIR /var/www/html
-
-# Run Composer and npm
-RUN composer install
-RUN npm install & npm run dev
