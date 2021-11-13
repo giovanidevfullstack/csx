@@ -1,9 +1,13 @@
 version: '3.9'
 
+networks:
+  net:
+    driver: bridge
+
 services:
-  csx-app:
+  app:
     networks:
-      - csx-network
+      - net
     build: .
     container_name: csx-app
     restart: unless-stopped
@@ -11,10 +15,10 @@ services:
     volumes:
       - .:/var/www/html
     ports:
-      - "8000:80"
-      - "433:433"
+      - 8000:80
+      - 433:433
 
-  csx-mysql:
+  mysql:
     image: mysql:8.0
     container_name: csx-mysql
     restart: unless-stopped
@@ -22,16 +26,12 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - C:/Users/Administrador/Documents/Projetos/giovani.devfullstack/private/car_salle_saas/csx/.docker/volumes/db:/var/lib/mysql
+      - .docker/volumes/db:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=csx
       - MYSQL_USER=dev
       - MYSQL_PASSWORD=dev***
       - MYSQL_ROOT_PASSWORD=dev***
     networks:
-      - csx-network
-
-networks:
-  csx-network:
-    driver: bridge
+      - net
     
