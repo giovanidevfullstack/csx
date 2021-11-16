@@ -6,17 +6,31 @@ networks:
 
 services:
   app:
-    networks:
-      - net
     build: .
     container_name: csx-app
     restart: unless-stopped
     tty: true
     volumes:
-      - .:/var/www/html
+      - .:/var/www/html    
+    networks:
+      - net
+  
+  apache:
+    image: httpd:alpine3.14
+    container_name: csx-apache
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - .docker/apache2/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./:/var/www/html
     ports:
       - 8000:80
       - 433:433
+    depends_on:
+      - app
+      - mysql    
+    networks:
+      - net
 
   mysql:
     image: mysql:8.0
