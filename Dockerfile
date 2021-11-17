@@ -22,3 +22,6 @@ COPY . /var/www/html
 
 # Set Docker root
 WORKDIR /var/www/html
+
+# Storage permission
+RUN chown -R www-data:www-data storage
