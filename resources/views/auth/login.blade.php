@@ -6,7 +6,7 @@
         bg-gradient-to-tr from-indigo-300 via-indigo-700 to-black
         sm:items-center py-4 sm:pt-0">
         
-        <div class="w-10/12 h-4/6 sm:w-1/12 sm:h-6 md:w-8/12 md:h-3/6 lg:w-8/12 lg:h-3/6 xl:w-4/12 xl:h-3/6 2xl:w-3/12 2xl:h-3/6
+        <div class="w-10/12 h-4/6 sm:w-1/12 sm:h-6 md:w-6/12 md:h-3/6 lg:w-8/12 lg:h-3/6 xl:w-4/12 xl:h-4/6 2xl:w-3/12 2xl:h-3/6
                 px-5 flex items-center flex-shrink
                 bg-white shadow-r-3-xl" style="border-radius: 50% 5%/ 28% 5%">
 
